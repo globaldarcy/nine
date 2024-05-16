@@ -29,3 +29,41 @@ import NinebotFooter from '../components/n/ninebot-footer.astro';
 	main {
 	}
 </style>
+
+<script>
+    import $ from "jquery";
+    $.ajax({
+        type: "get",
+        url: "/main",
+        dataType: "html",
+        success: function (data) {
+            console.log(typeof data);
+            const parser = new DOMParser();
+            const htmlDocument = parser.parseFromString(data, "text/html");
+
+            // 获取指定的 DOM 节点
+            const targetNode = htmlDocument.querySelector(".s-exp");
+            console.log(targetNode);
+            const currentNode =  document.querySelector(".n-explore");
+
+            const siteOne = document.querySelector(".link-n");
+            siteOne.addEventListener("click", function () {
+                currentNode.parentNode.replaceChild(targetNode, currentNode);
+            });
+            // currentNode.parentNode.replaceChild(targetNode, currentNode);
+            // const fragment = document.createDocumentFragment();
+            // fragment.appendChild(data);
+            // const range = document.createRange();
+            // const fragment = range.createContextualFragment(data);
+            // console.log(fragment);
+            // document = fragment;
+            // document.open();
+            // document.write(data);
+            // document.close();
+            // console.log($(document).html(data));
+        },
+        error: function (error) {
+            console.log(error);
+        },
+    });
+</script>

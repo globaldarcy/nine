@@ -70,5 +70,27 @@ $(function () {
 
 
 
-
+$(function () {
+    // $.ajax({
+    //     type: "get",
+    //     url: "/main",
+    //     dataType: "html",
+    //     success: function (data) {
+    //         console.log(typeof data);
+    //         // const fragment = document.createDocumentFragment();
+    //         // fragment.appendChild(data);
+    //         // const range = document.createRange();
+    //         // const fragment = range.createContextualFragment(data);
+    //         // console.log(fragment);
+    //         // document = fragment;
+    //         document.open();
+    //         document.write(data);
+    //         document.close();
+    //         // console.log($(document).html(data));
+    //     },
+    //     error: function (error) {
+    //         console.log(error);
+    //     }
+    // });
+});
 
