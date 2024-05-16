@@ -3,18 +3,24 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Skv from '../components/s-kv.astro';
 import STmu from '../components/s-tmu.astro';
-import SThr from '../components/s-thr.astro';
+
 import SExp from '../components/s-exp.astro';
 import SJoy from '../components/s-joy.astro';
+import SFear from '../components/s-fear.astro';
+import SOur from '../components/s-our.astro';
+import SFooter from '../components/s-footer.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
+	<main class="ninebot">
 		<Skv/>
 		<STmu/>
-		<SThr/>
+		
 		<SExp/>
 		<SJoy/>
+		<SFear/>
+		<SOur/>
+		<SFooter/>
 	</main>
 </Layout>
 
