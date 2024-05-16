@@ -43,10 +43,10 @@ $(function () {
 
    var expSwiper = new Swiper(".expSwiper", {
     slidesPerView: "auto",
-    autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-    },
+    // autoplay: {
+    //     delay: 3500,
+    //     disableOnInteraction: false,
+    // },
     navigation: {
         nextEl: '.exp-next',
         prevEl: '.exp-prev',
