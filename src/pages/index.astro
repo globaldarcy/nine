@@ -1,33 +1,33 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import NinebotHeader from '../components/n/ninebot-header.astro';
-import NinebotKV from '../components/n/ninebot-kv.astro';
-import NinebotNew from '../components/n/ninebot-new.astro';
-import NinebotCity from '../components/n/ninebot-city.astro';
-import NinebotFun from '../components/n/ninebot-fun.astro';
-import NinebotAbout from '../components/n/ninebot-about.astro';
-import NinebotExplore from '../components/n/ninebot-explore.astro';
-import NinebotFooter from '../components/n/ninebot-footer.astro';
+import Layout from "../layouts/Layout.astro";
+import NinebotHeader from "../components/n/ninebot-header.astro";
+import NinebotKV from "../components/n/ninebot-kv.astro";
+import NinebotNew from "../components/n/ninebot-new.astro";
+import NinebotCity from "../components/n/ninebot-city.astro";
+import NinebotFun from "../components/n/ninebot-fun.astro";
+import NinebotAbout from "../components/n/ninebot-about.astro";
+import NinebotExplore from "../components/n/ninebot-explore.astro";
+import NinebotFooter from "../components/n/ninebot-footer.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="ninebot">
-		<div class="ninebot">
-			<NinebotHeader/>
-			<NinebotKV/>
-			<NinebotNew/>
-			<NinebotCity/>
-			<NinebotFun/>
-			<NinebotAbout/>
-			<NinebotExplore/>
-			<NinebotFooter/>
-		</div>
-	</main>
+    <main class="ninebot">
+        <div class="ninebot">
+            <NinebotHeader />
+            <NinebotKV />
+            <NinebotNew />
+            <NinebotCity />
+            <NinebotFun />
+            <NinebotAbout />
+            <NinebotExplore />
+            <NinebotFooter />
+        </div>
+    </main>
 </Layout>
 
 <style lang="scss">
-	main {
-	}
+    main {
+    }
 </style>
 
 <script>
@@ -43,11 +43,22 @@ import NinebotFooter from '../components/n/ninebot-footer.astro';
 
             // 获取指定的 DOM 节点
             const targetNode = htmlDocument.querySelector(".s-exp");
-            console.log(targetNode);
-            const currentNode =  document.querySelector(".n-explore");
 
-            const siteOne = document.querySelector(".link-n");
+            // 对节点的内容进行预加载
+            targetNode.querySelectorAll("img").forEach((item) => {
+                const preloadImage = new Image();
+                preloadImage.src = item.src;
+            });
+            console.log(targetNode);
+            const currentNode = document.querySelector(".n-kv");
+
+            const siteOne = document.querySelector(".logo-s");
             siteOne.addEventListener("click", function () {
+                console.log(123);
+                console.log(document.querySelector(".n-kv"));
+                if (document.querySelector(".n-kv") == null) {
+                    return false;
+                }
                 currentNode.parentNode.replaceChild(targetNode, currentNode);
             });
             // currentNode.parentNode.replaceChild(targetNode, currentNode);
