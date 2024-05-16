@@ -32,49 +32,45 @@ import NinebotFooter from "../components/n/ninebot-footer.astro";
 
 <script>
     import $ from "jquery";
-    $.ajax({
-        type: "get",
-        url: "/main",
-        dataType: "html",
-        success: function (data) {
-            console.log(typeof data);
-            const parser = new DOMParser();
-            const htmlDocument = parser.parseFromString(data, "text/html");
+    function getPage(isShow) {
+        $.ajax({
+            type: "get",
+            url: "/main",
+            dataType: "html",
+            success: function (data) {
+                console.log(typeof data);
+                const parser = new DOMParser();
+                const htmlDocument = parser.parseFromString(data, "text/html");
 
-            // 获取指定的 DOM 节点
-            const targetNode = htmlDocument.querySelector(".s-exp");
+                // 获取指定的 DOM 节点
+                const targetNode = htmlDocument.querySelector(".s-exp");
 
-            // 对节点的内容进行预加载
-            targetNode.querySelectorAll("img").forEach((item) => {
-                const preloadImage = new Image();
-                preloadImage.src = item.src;
-            });
-            console.log(targetNode);
-            const currentNode = document.querySelector(".n-kv");
-
-            const siteOne = document.querySelector(".logo-s");
-            siteOne.addEventListener("click", function () {
-                console.log(123);
-                console.log(document.querySelector(".n-kv"));
-                if (document.querySelector(".n-kv") == null) {
-                    return false;
+                // 对节点的内容进行预加载
+                targetNode.querySelectorAll("img").forEach((item) => {
+                    const preloadImage = new Image();
+                    preloadImage.src = item.src;
+                });
+                console.log(targetNode);
+                const currentNode = document.querySelector(".n-kv");
+                if (isShow) {
+                    console.log("click: ", document.querySelector(".n-kv"));
+                    if (document.querySelector(".n-kv") == null) {
+                        return false;
+                    }
+                    currentNode.parentNode.replaceChild(targetNode, currentNode);
                 }
-                currentNode.parentNode.replaceChild(targetNode, currentNode);
-            });
-            // currentNode.parentNode.replaceChild(targetNode, currentNode);
-            // const fragment = document.createDocumentFragment();
-            // fragment.appendChild(data);
-            // const range = document.createRange();
-            // const fragment = range.createContextualFragment(data);
-            // console.log(fragment);
-            // document = fragment;
-            // document.open();
-            // document.write(data);
-            // document.close();
-            // console.log($(document).html(data));
-        },
-        error: function (error) {
-            console.log(error);
-        },
+            },
+            error: function (error) {
+                console.log(error);
+            },
+        });
+    }
+    let isShow = false;
+    getPage(isShow);
+
+    const siteOne = document.querySelector(".logo-s");
+    siteOne.addEventListener("click", function () {
+        isShow = true;
+        getPage(isShow);
     });
 </script>
