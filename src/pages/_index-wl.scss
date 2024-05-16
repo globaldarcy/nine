@@ -45,6 +45,108 @@
         }
     }
     // common end
+    .n-header {
+        padding: 0 vw(300);
+        border-bottom: 1px solid #dadada;
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: vw(20) 0 vw(10) 0;
+            .nav-logo {
+                position: relative;
+                .logo-s,
+                .logo-n {
+                    width: vw(100);
+                    display: inline-block;
+                    position: relative;
+                    cursor: pointer;
+                    @media (any-hover: hover) {
+                        &:hover {
+                            &::after {
+                                content: '';
+                                background: #c50609;
+                                position: absolute;
+                                width: 75%;
+                                height: 2px;
+                                left: 18%;
+                                bottom: vw(-10);
+                            }
+                        }
+                    }
+                    &:active {
+                        &::after {
+                            content: '';
+                            background: #c50609;
+                            position: absolute;
+                            width: 75%;
+                            height: 2px;
+                            left: 18%;
+                            bottom: vw(-10);
+                        }
+                    }
+                }
+                .logo-n {
+                    margin-left: vw(20);
+                    &::after {
+                        content: '';
+                        background: #c50609;
+                        position: absolute;
+                        width: 75%;
+                        height: 2px;
+                        left: 18%;
+                        bottom: vw(-10);
+                    }
+                }
+            }
+            .nav-right {
+                display: flex;
+                align-items: center;
+                font-size: vw(16);
+                color: #666;
+                .nav-menu {
+                    display: flex;
+                    .nav-item {
+                        margin: 0 vw(15);
+                    }
+                }
+                .user-logo {
+                    cursor: pointer;
+                    width: vw(20);
+                    margin: 0 vw(30) 0 vw(15);
+                    .user-img {
+                        vertical-align: center;
+                    }
+                }
+                .share-btn {
+                    background-color: #c50609;
+                    color: #fff;
+                    padding: 0 vw(15);
+                    border-radius: vw(20);
+                    line-height: vw(33);
+                }
+            }
+        }
+        .sub-nav {
+            font-size: vw(16);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: vw(1320);
+            padding: 0 0 vw(20) 0;
+            .sub-nav-logo {
+                width: vw(50);
+            }
+            .sub-nav-menu {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .sub-nav-item {
+                    margin: 0 vw(30);
+                }
+            }
+        }
+    }
     .n-kv {
         position: relative;
         margin-bottom: vw(40);
@@ -116,9 +218,10 @@
             }
         }
     }
-    .n-fun{
-        .fun-content{
-            .fun-row{
+    .n-fun,
+    .n-explore {
+        .fun-content {
+            .fun-row {
                 display: flex;
                 margin: 0 vw(-13);
                 .fun-col {
@@ -127,12 +230,11 @@
                     flex: 0 0 33.33%;
                     padding: 0 vw(13);
                     .fun-item {
-                        .fun-img{
+                        .fun-img {
                             margin-bottom: vw(20);
                         }
-                        .fun-summary{
-                            .n-desc{
-
+                        .fun-summary {
+                            .n-desc {
                             }
                         }
                     }
@@ -140,25 +242,25 @@
             }
         }
     }
-    .n-footer{
-        .footer-content{
+    .n-footer {
+        .footer-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: vw(20) vw(260);
-            border-top: 1px solid #999;
-            a{
+            border-top: 1px solid #dadada;
+            a {
                 display: block;
             }
-            .link-n{
+            .link-n {
                 font-size: vw(42);
             }
-            .footer-line{
+            .footer-line {
                 width: vw(60);
                 height: vw(3);
                 background-color: #000;
             }
-            .link-s{
+            .link-s {
                 font-size: vw(26);
                 font-weight: 700;
                 color: #c50609;
