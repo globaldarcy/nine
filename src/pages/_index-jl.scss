@@ -439,9 +439,156 @@
     }
 }
 
-.s-thr {
-    width: vw(1820);
-    //height: vw(500);
-    // margin: 0 auto;
-    // background-color: pink;
+.s-fear {
+    width: 100%;
+    background-color: #000;
+    padding-bottom: vw(120);
+    color: #fff;
+    text-align: center;
+    .s-fear-main {
+        width: 100%;
+        background-color: #160002;
+        padding-top: vw(230);
+        padding-bottom: vw(150);
+        .s-fear-title {
+            color: #fff;
+            font-size: vw(70);
+            position: relative;
+            font-weight: bold;
+            .s-fear-position {
+                width: vw(170);
+                height: vw(170);
+                
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                .s-fear-position-wrap {
+                    position: relative;
+                    .s-fear-position-wrap-line1 {
+                        width: vw(10);
+                        height: vw(70);
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform:rotate(-45deg) translate(-486%,-24%);
+                        background-color: #ff0302;
+                    }
+                    .s-fear-position-wrap-line2 {
+                        width: vw(10);
+                        height: vw(70);
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform:rotate(45deg) translate(365%,-6%);
+                        background-color: #ff0302;
+                    }
+                    .s-fear-position-wrap-line3 {
+                        width: vw(10);
+                        height: vw(70);
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform:rotate(45deg) translate(318%,139%);
+                        background-color: #ff0302;
+                    }
+                    .s-fear-position-wrap-line4 {
+                        width: vw(10);
+                        height: vw(70);
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform:rotate(-45deg) translate(-460%,124%);
+                        background-color: #ff0302;
+                    }
+
+                }
+            }
+        }
+        .s-fear-description {
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: vw(130);
+        }
+    }
 }
+
+.s-our {
+    width: 100%;
+    background-color: #000;
+    .s-our-main {
+        width: vw(1820);
+        margin: 0 auto;
+        padding-bottom: vw(94);
+        overflow: hidden;
+        
+        .our-row{
+            display: flex;
+            margin: 0 vw(-13);
+            .our-col {
+                width: 33.33%;
+                max-width: 33.33%;
+                flex: 0 0 33.33%;
+                padding: 0 vw(13);
+                color: #fff;
+                .our-item {
+                    position: relative;
+                    .our-img{
+                        margin-bottom: vw(20);
+                    }
+                    .our-summary{
+                        position: absolute;
+                        left: 50%;
+                        top: vw(36);
+                        width: 85%;
+                        transform: translateX(-50%);
+                        text-align: center;
+                        .s-desc {
+                            color: rgba(255, 255, 255, 0.75);
+                            margin-bottom: vw(5);
+                        }
+                        & > a {
+                            color: #c51601;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ninebot {
+    .n-footer {
+        &.s {
+            width: 100%;
+            background: #000;
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: vw(20) vw(260);
+                border-top: 1px solid rgba(255, 255, 255, 0.5);
+                a {
+                    display: block;
+                }
+                .link-n {
+                    font-size: vw(26);
+                    color: rgba(255, 255, 255, 0.5);
+                }
+                .footer-line {
+                    width: vw(60);
+                    height: vw(3);
+                    background-color: #000;
+                }
+                .link-s {
+                    
+                    font-size: vw(42);
+                    font-weight: 700;
+                    color: #c50609;
+                }
+            }
+        }
+        
+    }
+    
+}
+
