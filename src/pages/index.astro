@@ -1,11 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Nkv from '../components/n-kv.astro';
+import NinebotHeader from '../components/n/ninebot-header.astro';
+import NinebotKV from '../components/n/ninebot-kv.astro';
+import NinebotNew from '../components/n/ninebot-new.astro';
+import NinebotCity from '../components/n/ninebot-city.astro';
+import NinebotFun from '../components/n/ninebot-fun.astro';
+import NinebotAbout from '../components/n/ninebot-about.astro';
+import NinebotExplore from '../components/n/ninebot-explore.astro';
+import NinebotFooter from '../components/n/ninebot-footer.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-        <Nkv/>
+	<main class="ninebot">
+		<div class="ninebot">
+			<NinebotHeader/>
+			<NinebotKV/>
+			<NinebotNew/>
+			<NinebotCity/>
+			<NinebotFun/>
+			<NinebotAbout/>
+			<NinebotExplore/>
+			<NinebotFooter/>
+		</div>
 	</main>
 </Layout>
 

@@ -1,3 +1,168 @@
-.n-kv{
+.ninebot {
+    // common
+    line-height: 1.5;
+    .n-container {
+        margin: 0 auto;
+        width: vw(1820);
+    }
+    .n-title {
+        font-size: vw(48);
+        margin-bottom: vw(30);
+    }
+    .n-desc {
+        font-size: vw(16);
+        color: #333;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-height: vw(48);
+        margin: vw(10) 0;
+    }
+    .summary-title {
+        font-size: vw(28);
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .white {
+        color: #fff !important;
+    }
+    .n-distance {
+        margin-bottom: vw(80);
+    }
+    .n-more {
+        color: #c50609;
+        font-size: vw(16);
+        img {
+            display: inline-block;
+            width: vw(15);
+            vertical-align: middle;
+            margin-left: vw(5);
+        }
+    }
+    // common end
+    .n-kv {
+        position: relative;
+        margin-bottom: vw(40);
+        .n-title {
+            position: absolute;
+            bottom: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    .n-new {
+        .new-content {
+            .new-row {
+                display: flex;
+                margin: 0 vw(-13);
+                .new-col {
+                    width: 50%;
+                    max-width: 50%;
+                    flex: 0 0 50%;
+                    padding: 0 vw(13);
+                    .new-item {
+                        position: relative;
+                        .new-summary {
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            width: 100%;
+                            background-color: rgba(255, 255, 255, 0.5);
+                            padding: vw(30);
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: flex-end;
+                            .n-desc {
+                                flex: 0 0 60%;
+                                width: 60%;
+                                max-width: 60%;
+                                margin: 0;
+                            }
+                            .btn-group {
+                                flex: 0 0 40%;
+                                width: 40%;
+                                max-width: 40%;
+                                text-align: right;
+                                .n-buy-btn {
+                                    font-size: vw(16);
+                                    margin-left: vw(20);
+                                    background-color: #fff;
+                                    border-radius: vw(20);
+                                    border: 1px solid #999;
+                                    padding: vw(5) vw(15);
+                                    line-height: vw(33);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .n-city {
+        position: relative;
+        .city-summary {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            padding: vw(30);
+            .n-desc {
+                min-height: auto;
+            }
+        }
+    }
+    .n-fun{
+        .fun-content{
+            .fun-row{
+                display: flex;
+                margin: 0 vw(-13);
+                .fun-col {
+                    width: 33.33%;
+                    max-width: 33.33%;
+                    flex: 0 0 33.33%;
+                    padding: 0 vw(13);
+                    .fun-item {
+                        .fun-img{
+                            margin-bottom: vw(20);
+                        }
+                        .fun-summary{
+                            .n-desc{
 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .n-footer{
+        .footer-content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: vw(20) vw(260);
+            border-top: 1px solid #999;
+            a{
+                display: block;
+            }
+            .link-n{
+                font-size: vw(42);
+            }
+            .footer-line{
+                width: vw(60);
+                height: vw(3);
+                background-color: #000;
+            }
+            .link-s{
+                font-size: vw(26);
+                font-weight: 700;
+                color: #c50609;
+            }
+        }
+    }
 }
