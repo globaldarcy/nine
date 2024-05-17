@@ -5,9 +5,26 @@
 
     .s-kv-main {
         width: 100%;
-
+        position: relative;
         .s-kv-img {
             display: block;
+        }
+        .s-kv-arrow {
+            width: vw(100);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            cursor: pointer;
+        }
+        .s-kv-title {
+            position: absolute;
+            left: vw(170);
+            top:vw(70);
+            font-size: vw(210);
+            color: #e80000;
+            //font-weight: bold;
+            line-height: 1;
         }
     }
 }
@@ -384,6 +401,14 @@
                                     }
                                 }
                             }
+                        }
+                        .s-joy-arrow {
+                            width: vw(100);
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%,-50%);
+                            cursor: pointer;
                         }
 
                         .s-joy-position-new {
