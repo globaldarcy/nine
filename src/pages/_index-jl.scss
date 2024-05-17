@@ -6,21 +6,24 @@
     .s-kv-main {
         width: 100%;
         position: relative;
+
         .s-kv-img {
             display: block;
         }
+
         .s-kv-arrow {
             width: vw(100);
             position: absolute;
             left: 50%;
             top: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             cursor: pointer;
         }
+
         .s-kv-title {
             position: absolute;
             left: vw(170);
-            top:vw(70);
+            top: vw(70);
             font-size: vw(210);
             color: #e80000;
             //font-weight: bold;
@@ -402,12 +405,13 @@
                                 }
                             }
                         }
+
                         .s-joy-arrow {
                             width: vw(100);
                             position: absolute;
                             left: 50%;
                             top: 50%;
-                            transform: translate(-50%,-50%);
+                            transform: translate(-50%, -50%);
                             cursor: pointer;
                         }
 
@@ -603,88 +607,112 @@
 }
 
 .ninebot {
+    
+
     .n-footer {
         &.s {
             width: 100%;
             background: #000;
             overflow: hidden;
 
-            .footer-content {
-
+            .footer-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: vw(20) vw(260);
+               
                 border-top: 1px solid rgba(255, 255, 255, 0.5);
+                .footer-col {
+                    width: 33.33%;
+                    max-width: 33.33%;
+                    flex: 0 0 33.33%;
 
-                .link-n {
-                    font-size: vw(26);
-                    color: rgba(255, 255, 255, 0.5);
-                }
+                    &:nth-child(3) {
+                        text-align: right;
+                    }
 
-                .footer-line {
-                    width: vw(60);
-                    height: vw(3);
-                    background-color: #000;
-                    position: relative;
+                    a {
+                        display: block;
+                    }
 
-                    .s-fear-position {
-                        width: vw(170);
-                        height: vw(170);
+                    .link-n {
+                        font-size: vw(42);
+                    }
 
-                        position: absolute;
-                        left: 50%;
-                        top: 50%;
-                        transform: scale(0.4) translate(-97%, -128%);
+                    .footer-line {
+                        width: vw(60);
+                        height: vw(3);
+                        background-color: #000;
+                        margin: 0 auto;
 
-                        .s-fear-position-wrap {
-                            position: relative;
+                        position: relative;
 
-                            .s-fear-position-wrap-line1 {
-                                width: vw(10);
-                                height: vw(70);
-                                position: absolute;
-                                left: 50%;
-                                top: 50%;
-                                transform: rotate(-45deg) translate(-486%, -24%);
-                                background-color: #ff0302;
+                        .s-fear-position {
+                            width: vw(170);
+                            height: vw(170);
+
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: scale(0.4) translate(-97%, -128%);
+
+                            .s-fear-position-wrap {
+                                position: relative;
+
+                                .s-fear-position-wrap-line1 {
+                                    width: vw(10);
+                                    height: vw(70);
+                                    position: absolute;
+                                    left: 50%;
+                                    top: 50%;
+                                    transform: rotate(-45deg) translate(-486%, -24%);
+                                    background-color: #ff0302;
+                                }
+
+                                .s-fear-position-wrap-line2 {
+                                    width: vw(10);
+                                    height: vw(70);
+                                    position: absolute;
+                                    left: 50%;
+                                    top: 50%;
+                                    transform: rotate(45deg) translate(365%, -6%);
+                                    background-color: #ff0302;
+                                }
+
+                                .s-fear-position-wrap-line3 {
+                                    width: vw(10);
+                                    height: vw(70);
+                                    position: absolute;
+                                    left: 50%;
+                                    top: 50%;
+                                    transform: rotate(45deg) translate(318%, 139%);
+                                    background-color: #ff0302;
+                                }
+
+                                .s-fear-position-wrap-line4 {
+                                    width: vw(10);
+                                    height: vw(70);
+                                    position: absolute;
+                                    left: 50%;
+                                    top: 50%;
+                                    transform: rotate(-45deg) translate(-460%, 124%);
+                                    background-color: #ff0302;
+                                }
+
                             }
-
-                            .s-fear-position-wrap-line2 {
-                                width: vw(10);
-                                height: vw(70);
-                                position: absolute;
-                                left: 50%;
-                                top: 50%;
-                                transform: rotate(45deg) translate(365%, -6%);
-                                background-color: #ff0302;
-                            }
-
-                            .s-fear-position-wrap-line3 {
-                                width: vw(10);
-                                height: vw(70);
-                                position: absolute;
-                                left: 50%;
-                                top: 50%;
-                                transform: rotate(45deg) translate(318%, 139%);
-                                background-color: #ff0302;
-                            }
-
-                            .s-fear-position-wrap-line4 {
-                                width: vw(10);
-                                height: vw(70);
-                                position: absolute;
-                                left: 50%;
-                                top: 50%;
-                                transform: rotate(-45deg) translate(-460%, 124%);
-                                background-color: #ff0302;
-                            }
-
                         }
                     }
-                }
 
-                .link-s {
-
-                    font-size: vw(42);
-                    font-weight: 700;
-                    color: #c50609;
+                    .link-n {
+                        color: #c1c1c1;
+                        font-size: vw(26);
+                    }
+                    .link-s {
+    
+                        font-size: vw(42);
+                        font-weight: 700;
+                        color: #c50609;
+                    }
                 }
             }
         }
@@ -753,6 +781,7 @@
                             bottom: vw(-10);
                         }
                     }
+
                     .logo-n {
                         margin-left: vw(20);
 
@@ -766,6 +795,7 @@
                             left: 18%;
                             bottom: vw(-10);
                         }
+
                         &:hover {
                             &::after {
                                 display: block;
