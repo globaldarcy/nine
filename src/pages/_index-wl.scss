@@ -44,17 +44,32 @@
             margin-left: vw(5);
         }
     }
-    .n-tip{
+    .n-tip {
         color: #c51601;
         position: absolute;
         left: vw(30);
         top: vw(20);
         font-size: vw(28);
     }
+    .video-btn{
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        width: vw(80);
+        height: vw(80);
+        background: url("/img/n/icon/play-btn.png") no-repeat center center;
+        background-size: vw(80) vw(80);
+        &.video-btn-kv{
+            top: auto;
+            bottom: vw(50);
+        }
+    }
     // common end
     .n-header {
         padding: 0 vw(300);
-        border-bottom: 1px solid #dadada;
         background-color: #fff;
         .nav {
             display: flex;
@@ -135,13 +150,17 @@
                 }
             }
         }
-        .sub-nav {
-            font-size: vw(16);
+    }
+    .n-sub-nav {
+        font-size: vw(16);
+        padding: 0 0 vw(20) 0;
+        border-bottom: 1px solid #dadada;
+        .sub-nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: vw(1320);
-            padding: 0 0 vw(20) 0;
+            margin: 0 auto;
             .sub-nav-logo {
                 width: vw(50);
             }
@@ -158,11 +177,15 @@
     .n-kv {
         position: relative;
         margin-bottom: vw(40);
-        .n-title {
+        .kv-content {
             position: absolute;
-            bottom: 30%;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
+            .kv-description {
+                font-size: vw(120);
+                font-weight: 400;
+            }
         }
     }
     .n-new {
@@ -240,39 +263,61 @@
                     .fun-item {
                         position: relative;
                         .fun-img {
+                            position: relative;
                             margin-bottom: vw(20);
-                        }
-                        .fun-summary {
-                            .n-desc {
-                            }
                         }
                     }
                 }
             }
         }
     }
+    .n-about {
+        position: relative;
+        .about-bg {
+            position: relative;
+            .about-content {
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                .n-description {
+                    font-size: vw(76);
+                    font-weight: 400;
+                }
+            }
+        }
+    }
     .n-footer {
-        .footer-content {
+        .footer-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: vw(20) vw(260);
             border-top: 1px solid #dadada;
-            a {
-                display: block;
-            }
-            .link-n {
-                font-size: vw(42);
-            }
-            .footer-line {
-                width: vw(60);
-                height: vw(3);
-                background-color: #000;
-            }
-            .link-s {
-                font-size: vw(26);
-                font-weight: 700;
-                color: #c51601;
+            .footer-col {
+                width: 33.33%;
+                max-width: 33.33%;
+                flex: 0 0 33.33%;
+                &:nth-child(3){
+                    text-align: right;
+                }
+                a {
+                    display: block;
+                }
+                .link-n {
+                    font-size: vw(42);
+                }
+                .footer-line {
+                    width: vw(60);
+                    height: vw(3);
+                    background-color: #000;
+                    margin: 0 auto;
+                }
+                .link-s {
+                    font-size: vw(26);
+                    font-weight: 700;
+                    color: #c51601;
+                }
             }
         }
     }
