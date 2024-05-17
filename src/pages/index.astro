@@ -15,7 +15,7 @@ import NinebotFooter from "../components/n/ninebot-footer.astro";
     <main class="ninebot">
         <div class="ninebot">
             <NinebotHeader />
-			<NinebotSubNav />
+            <NinebotSubNav />
             <NinebotKV />
             <NinebotNew />
             <NinebotCity />
@@ -33,46 +33,56 @@ import NinebotFooter from "../components/n/ninebot-footer.astro";
 </style>
 
 <script>
-    import $ from "jquery";
-    function getPage(isShow) {
-        $.ajax({
-            type: "get",
-            url: "/main",
-            dataType: "html",
-            success: function (data) {
-                console.log(typeof data);
-                const parser = new DOMParser();
-                const htmlDocument = parser.parseFromString(data, "text/html");
+    import axios from "axios";
+    let isPending = true;
+    const controller = new AbortController();
 
-                // 获取指定的 DOM 节点
-                const targetNode = htmlDocument.querySelector(".s-exp");
-
-                // 对节点的内容进行预加载
-                targetNode.querySelectorAll("img").forEach((item) => {
-                    const preloadImage = new Image();
-                    preloadImage.src = item.src;
-                });
-                console.log(targetNode);
-                const currentNode = document.querySelector(".n-kv");
-                if (isShow) {
-                    console.log("click: ", document.querySelector(".n-kv"));
-                    if (document.querySelector(".n-kv") == null) {
-                        return false;
-                    }
-                    currentNode.parentNode.replaceChild(targetNode, currentNode);
-                }
-            },
-            error: function (error) {
-                console.log(error);
-            },
-        });
+    async function getPage() {
+        try {
+            const response = await axios.get("/main", {
+                signal: controller.signal,
+            });
+            isPending = false;
+            return response.data;
+        } catch (error) {
+            isPending = false;
+            console.error(error);
+        }
     }
-    let isShow = false;
-    getPage(isShow);
+
+    let page = getPage();
+    page.then((data) => {
+        console.log("data", typeof data);
+        if (typeof data === 'undefined') {
+            return false;
+        }
+        const parser = new DOMParser();
+        const htmlDocument = parser.parseFromString(data, "text/html");
+
+        // 获取指定的 DOM 节点
+        const targetNode = htmlDocument.querySelector(".s-exp");
+
+        // 对节点的内容进行预加载
+        targetNode.querySelectorAll("img").forEach((item) => {
+            const preloadImage = new Image();
+            preloadImage.src = item.src;
+        });
+
+        const currentNode = document.querySelector(".n-kv");
+        if (document.querySelector(".n-kv") == null) {
+            return false;
+        }
+        currentNode.parentNode.replaceChild(targetNode, currentNode);
+    });
 
     const siteOne = document.querySelector(".logo-s");
     siteOne.addEventListener("click", function () {
-        isShow = true;
-        getPage(isShow);
+        // getPage();
+        console.log(123, isPending);
+        if (isPending) {
+            controller.abort("中止下载");
+            console.log("中止下载");
+            getPage();
+        }
     });
 </script>
