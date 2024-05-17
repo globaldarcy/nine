@@ -646,14 +646,14 @@
             width: 100%;
             background: #000;
             overflow: hidden;
-
+            border-top: 1px solid #454545;
             .footer-row {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: vw(20) vw(260);
                
-                border-top: 1px solid rgba(255, 255, 255, 0.5);
+               
+               
                 .footer-col {
                     width: 33.33%;
                     max-width: 33.33%;
@@ -686,7 +686,7 @@
                             position: absolute;
                             left: 50%;
                             top: 50%;
-                            transform: scale(0.4) translate(-97%, -128%);
+                            transform: scale(0.4) translate(-122%, -128%);
 
                             .s-fear-position-wrap {
                                 position: relative;
@@ -727,7 +727,7 @@
                                     position: absolute;
                                     left: 50%;
                                     top: 50%;
-                                    transform: rotate(-45deg) translate(-460%, 124%);
+                                    transform: rotate(-45deg) translate(-482%, 126%);
                                     background-color: #ff0302;
                                 }
 
