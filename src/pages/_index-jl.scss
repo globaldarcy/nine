@@ -606,9 +606,40 @@
     }
 }
 
+.s-sub-nav {
+    font-size: vw(16);
+    // padding: 0 0 vw(20) 0;
+    padding: vw(10) 0;
+    border-bottom: 1px solid #000;
+    background-color: #000;
+    color: #fff;
+    .sub-nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: vw(1320);
+        margin: 0 auto;
+        .sub-nav-logo {
+            width: vw(50);
+            & > img {
+                margin-left: vw(36);
+            }
+        }
+        .sub-nav-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .sub-nav-item {
+                margin: 0 vw(30);
+            }
+        }
+    }
+}
+
+
+
 .ninebot {
     
-
     .n-footer {
         &.s {
             width: 100%;
@@ -722,19 +753,18 @@
     .n-header {
         &.s {
             padding: 0 vw(300);
-            border-bottom: 1px solid #dadada;
-            background-color: #fff;
-
+            border-bottom: 1px solid #000;
+          
             .nav {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: vw(20) 0 vw(10) 0;
+                padding: vw(20) 0 0 0;
 
                 .nav-logo {
                     position: relative;
 
-                    .logo-s,
+                    
                     .logo-n {
                         width: vw(100);
                         display: inline-block;
@@ -747,10 +777,10 @@
                                     content: '';
                                     background: #c50609;
                                     position: absolute;
-                                    width: 75%;
+                                    width: 100%;
                                     height: 2px;
-                                    left: 18%;
-                                    bottom: vw(-10);
+                                    left: 0;
+                                    top: vw(-10);
                                 }
                             }
                         }
@@ -773,11 +803,11 @@
 
                         &::after {
                             content: '';
-                            background: #c50609;
+                            background: #000;
                             position: absolute;
-                            width: 75%;
-                            height: 2px;
-                            left: 18%;
+                            width: vw(99);
+                            height: 12px;
+                            left: vw(1);
                             bottom: vw(-10);
                         }
                     }
@@ -809,7 +839,7 @@
                     align-items: center;
                     font-size: vw(16);
                     color: #666;
-
+                    margin-top: vw(-10);
                     .nav-menu {
                         display: flex;
 
