@@ -13,8 +13,8 @@ import NinebotFooter from "../components/n/ninebot-footer.astro";
 
 <Layout title="Welcome to Astro.">
     <main class="ninebot">
-        <div class="ninebot">
-            <NinebotHeader />
+        <NinebotHeader />
+        <div class="content">
             <NinebotSubNav />
             <NinebotKV />
             <NinebotNew />
@@ -22,8 +22,8 @@ import NinebotFooter from "../components/n/ninebot-footer.astro";
             <NinebotFun />
             <NinebotAbout />
             <NinebotExplore />
-            <NinebotFooter />
         </div>
+        <NinebotFooter />
     </main>
 </Layout>
 
@@ -34,8 +34,25 @@ import NinebotFooter from "../components/n/ninebot-footer.astro";
 
 <script>
     import axios from "axios";
+    // 创建 Intersection Observer
+    var observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                // 元素进入视口，加载内容
+                // entry.target.style.opacity = 1;
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+
+    // 监听 main 元素
+    var main = document.querySelector(".content");
+    observer.observe(main);
+
     let isPending = true;
-    const controller = new AbortController();
+    let targetNode;
+    let page;
+    let controller = new AbortController();
 
     async function getPage() {
         try {
@@ -46,43 +63,61 @@ import NinebotFooter from "../components/n/ninebot-footer.astro";
             return response.data;
         } catch (error) {
             isPending = false;
-            console.error(error);
+            // console.error(error);
         }
     }
 
-    let page = getPage();
-    page.then((data) => {
-        console.log("data", typeof data);
-        if (typeof data === 'undefined') {
-            return false;
-        }
-        const parser = new DOMParser();
-        const htmlDocument = parser.parseFromString(data, "text/html");
+    function setHtml() {
+        page.then((data) => {
+            if (typeof data === "undefined") {
+                return false;
+            }
+            const parser = new DOMParser();
+            const htmlDocument = parser.parseFromString(data, "text/html");
 
-        // 获取指定的 DOM 节点
-        const targetNode = htmlDocument.querySelector(".s-exp");
+            // 获取指定的 DOM 节点
+            targetNode = htmlDocument.querySelector(".content-segway");
 
-        // 对节点的内容进行预加载
-        targetNode.querySelectorAll("img").forEach((item) => {
-            const preloadImage = new Image();
-            preloadImage.src = item.src;
+            // 对节点的内容进行预加载
+            targetNode.querySelectorAll("img").forEach((item) => {
+                const preloadImage = new Image();
+                preloadImage.src = item.src;
+            });
+            const currentNode = document.querySelector(".content");
+            if (document.querySelector(".content") == null) {
+                return false;
+            }
+            currentNode.parentNode.replaceChild(targetNode, currentNode);
+            if (window.initExpSwiper != undefined) {
+                window.initExpSwiper();
+            }
         });
+    }
 
-        const currentNode = document.querySelector(".n-kv");
-        if (document.querySelector(".n-kv") == null) {
-            return false;
-        }
-        currentNode.parentNode.replaceChild(targetNode, currentNode);
+    window.addEventListener("load", function () {
+        page = getPage();
     });
 
-    const siteOne = document.querySelector(".logo-s");
-    siteOne.addEventListener("click", function () {
-        // getPage();
-        console.log(123, isPending);
+    const siteS = document.querySelector(".logo-s");
+    const siteN = document.querySelector(".logo-n");
+    const currentNode = document.querySelector(".content");
+    siteS.addEventListener("click", function () {
         if (isPending) {
-            controller.abort("中止下载");
-            console.log("中止下载");
-            getPage();
+            controller.abort();
+            if (controller.signal.aborted) {
+                controller = new AbortController();
+                page = getPage();
+                setHtml();
+            }
+        } else {
+            setHtml();
         }
+    });
+    siteN.addEventListener("click", function () {
+        targetNode = document.querySelector(".content-segway");
+        if (document.querySelector(".content-segway") == null) {
+            return false;
+        }
+        targetNode.parentNode.replaceChild(currentNode, targetNode);
     });
 </script>
