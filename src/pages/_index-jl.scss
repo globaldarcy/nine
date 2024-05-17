@@ -622,7 +622,7 @@
         .sub-nav-logo {
             width: vw(50);
             & > img {
-                margin-left: vw(36);
+                //margin-left: vw(36);
             }
         }
         .sub-nav-menu {
@@ -630,7 +630,8 @@
             justify-content: space-between;
             align-items: center;
             .sub-nav-item {
-                margin: 0 vw(30);
+               // margin: 0 vw(30);
+                margin-left: 3.125vw;
             }
         }
     }
@@ -752,14 +753,14 @@
 
     .n-header {
         &.s {
-            padding: 0 vw(300);
-            border-bottom: 1px solid #000;
+            // padding: 0 vw(300);
+           // border-bottom: 1px solid #000;
           
             .nav {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: vw(20) 0 0 0;
+                padding: vw(27) 0 0 0;
 
                 .nav-logo {
                     position: relative;
@@ -799,7 +800,7 @@
                     }
 
                     .logo-s {
-                        margin-left: vw(20);
+                       // margin-left: vw(20);
                         position: relative;
                         & > img {
                             position: absolute;
@@ -892,6 +893,7 @@
 
                     .sub-nav-item {
                         margin: 0 vw(30);
+                        
                     }
                 }
             }
