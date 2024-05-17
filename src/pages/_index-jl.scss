@@ -780,7 +780,7 @@
                                     width: 100%;
                                     height: 2px;
                                     left: 0;
-                                    top: vw(-10);
+                                    top: vw(-4);
                                 }
                             }
                         }
@@ -791,24 +791,29 @@
                                 background: #c50609;
                                 position: absolute;
                                 width: 75%;
-                                height: 2px;
+                                height: 3px;
                                 left: 18%;
-                                bottom: vw(-10);
+                                bottom: vw(-12);
                             }
                         }
                     }
 
                     .logo-s {
                         margin-left: vw(20);
-
+                        position: relative;
+                        & > img {
+                            position: absolute;
+                            top:vw(-36);
+                            left: 0;
+                        }
                         &::after {
                             content: '';
-                            background: #000;
+                            background: #c50609;
                             position: absolute;
                             width: vw(99);
-                            height: 12px;
-                            left: vw(1);
-                            bottom: vw(-10);
+                            height: 2px;
+                            left: 0;
+                            top: vw(-37);
                         }
                     }
 
