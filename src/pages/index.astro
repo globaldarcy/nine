@@ -11,7 +11,7 @@ import SFear from "../components/s-fear.astro";
 import SOur from "../components/s-our.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Welcome to Demo.">
     <main class="ninebot">
         <NinebotHeader />
         <div class="content">
@@ -34,7 +34,8 @@ import SOur from "../components/s-our.astro";
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
                 // 元素进入视口，加载内容
-                // entry.target.style.opacity = 1;
+                console.log(entry.target);
+                entry.target.style.opacity = 1;
                 observer.unobserve(entry.target);
             }
         });
