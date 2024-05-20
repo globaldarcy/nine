@@ -76,15 +76,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: vw(20) 0 vw(10) 0;
+            height: vw(78);
             .nav-logo {
                 position: relative;
+                display: flex;
+                align-items: center;
+                height: 100%;
                 .logo-s,
                 .logo-n {
-                    width: vw(100);
-                    display: inline-block;
+                    display: flex;
+                    align-items: center;
+                    width: vw(130);
                     position: relative;
                     cursor: pointer;
+                    height: 100%;
+                    padding: vw(10);
                     &.active,
                     &:hover,
                     &:active {
@@ -95,12 +101,13 @@
                             width: 75%;
                             height: 2px;
                             left: 18%;
-                            bottom: vw(-10);
+                            bottom: 0;
                         }
                     }
                 }
                 .logo-s {
                     margin-right: vw(20);
+                    padding: 0 vw(10);
                     &.active,
                     &:hover,
                     &:active {
@@ -109,11 +116,23 @@
                             content: '';
                             background: #c51601;
                             position: absolute;
-                            width: 75%;
+                            width: 100%;
                             height: 2px;
-                            left: 18%;
-                            bottom: vw(-10);
+                            left: 0;
+                            top: 0;
                         }
+                        .active-after{
+                            display: block;
+                        }
+                        .active-before{
+                            display: none;
+                        }
+                    }
+                    .active-before{
+                        display: block;
+                    }
+                    .active-after{
+                        display: none;
                     }
                 }
             }
@@ -148,7 +167,7 @@
     }
     .n-sub-nav {
         font-size: vw(16);
-        padding: 0 0 vw(20) 0;
+        padding:vw(10) 0;
         border-bottom: 1px solid #dadada;
         .sub-nav-container {
             display: flex;
@@ -158,6 +177,7 @@
             margin: 0 auto;
             .sub-nav-logo {
                 width: vw(50);
+                padding: vw(5);
             }
             .sub-nav-menu {
                 display: flex;
