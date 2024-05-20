@@ -52,7 +52,7 @@
             @include mob() {
                 left: vwm(40);
                 top: vwm(30);
-                font-size: vw(190);
+                font-size: vwm(100);
             }
         }
     }
@@ -673,21 +673,21 @@
                         }
                         .summary-title {
                             @include mob() {
-                                font-size: vwm(26);
+                                font-size: vwm(32);
                               }
                         }
                         .s-desc {
                             color: rgba(255, 255, 255, 0.75);
                             margin-bottom: vw(5);
                             @include mob() {
-                                font-size: vwm(18);
+                                font-size: vwm(22);
                               }
                         }
 
                         &>a {
                             color: #c51601;
                             @include mob() {
-                                font-size: vwm(20);
+                                font-size: vwm(26);
                               }
                         }
                     }
