@@ -69,19 +69,33 @@
     }
     // common end
     .n-header {
-        width: vw(1320);
-        margin: 0 auto;
+        width: 100%;
+        padding: 0 vw(300);
         background-color: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        @include mob() {
+            padding: 0 vwm(15);
+        }
         .nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: vw(78);
+            @include mob() {
+                height: vwm(100);
+                border-top: 2px solid #e80000;
+                border-bottom: 1px solid #e80000;
+            }
             .nav-logo {
                 position: relative;
                 display: flex;
                 align-items: center;
                 height: 100%;
+                @include mob() {
+                    padding: vwm(20) 0;
+                }
                 .logo-s,
                 .logo-n {
                     display: flex;
@@ -100,19 +114,33 @@
                             height: 2px;
                             left: 0;
                             bottom: 0;
+                            @include mob() {
+                                display: none;
+                            }
                         }
                     }
                     img {
                         height: vw(55);
+                        @include mob() {
+                            height: vwm(60);
+                        }
                     }
                 }
                 .logo-s {
                     margin-right: vw(20);
                     padding: 0 vw(10);
+                    @include mob() {
+                        padding-right: vwm(15);
+                        margin-right: vwm(15);
+                        border-right: 1px solid #999;
+                    }
                     &.active,
                     &:hover,
                     &:active {
                         background-color: #000;
+                        @include mob() {
+                            background-color: transparent;
+                        }
                         &::after {
                             content: '';
                             background: #c51601;
@@ -124,9 +152,15 @@
                         }
                         .active-after {
                             display: block;
+                            @include mob() {
+                                display: none;
+                            }
                         }
                         .active-before {
                             display: none;
+                            @include mob() {
+                                display: block;
+                            }
                         }
                     }
                     img {
@@ -148,16 +182,11 @@
                 color: #666;
                 .nav-menu {
                     display: flex;
+                    @include mob() {
+                        display: none;
+                    }
                     .nav-item {
                         margin: 0 vw(15);
-                    }
-                }
-                .user-logo {
-                    cursor: pointer;
-                    width: vw(20);
-                    margin: 0 vw(30) 0 vw(15);
-                    .user-img {
-                        vertical-align: center;
                     }
                 }
                 .share-btn {
@@ -166,6 +195,41 @@
                     padding: 0 vw(15);
                     border-radius: vw(20);
                     line-height: vw(33);
+                    @include mob() {
+                        display: none;
+                    }
+                }
+            }
+            .user-logo {
+                cursor: pointer;
+                width: vw(20);
+                margin: 0 vw(30) 0 vw(15);
+                .user-img {
+                    vertical-align: center;
+                }
+                @include mob() {
+                    width: vwm(50);
+                    height: vwm(50);
+                    background: url(../img/menu-red.svg) no-repeat center center / cover;
+                    img {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &.n {
+            .nav {
+                @include mob() {
+                    height: vwm(100);
+                    border-top: 2px solid #000;
+                    border-bottom: 1px solid #000;
+                }
+                .user-logo {
+                    @include mob() {
+                        width: vwm(50);
+                        height: vwm(50);
+                        background-image: url(../img/menu.svg);
+                    }
                 }
             }
         }

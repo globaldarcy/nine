@@ -34,8 +34,8 @@ import SOur from "../components/s-our.astro";
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
                 // 元素进入视口，加载内容
-                console.log(entry.target);
-                entry.target.style.opacity = 1;
+                // console.log(entry.target);
+                // entry.target.style.opacity = 1;
                 observer.unobserve(entry.target);
             }
         });
@@ -107,6 +107,7 @@ import SOur from "../components/s-our.astro";
         }
         document.querySelector(".logo-s").classList.remove("active");
         document.querySelector(".logo-n").classList.add("active");
+        document.querySelector(".n-header").classList.add("n");
         document.querySelector(".n-footer").classList.add("n");
     }
 
@@ -118,6 +119,7 @@ import SOur from "../components/s-our.astro";
         targetNode.parentNode.replaceChild(currentNode, targetNode);
         document.querySelector(".logo-n").classList.remove("active");
         document.querySelector(".logo-s").classList.add("active");
+        document.querySelector(".n-header").classList.remove("n");
         document.querySelector(".n-footer").classList.remove("n");
     }
 
