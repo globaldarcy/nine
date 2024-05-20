@@ -7,7 +7,7 @@ export default defineConfig({
     trailingSlash: "ignore",
     server: {
         host: true,
-        open: "/"
+        open: "/nine"
     },
     devToolbar: {
         enabled: false,

@@ -97,7 +97,7 @@
         margin: 0 auto;
         width: vw(80);
         height: vw(80);
-        background: url('../img/n/icon/play-btn.png') no-repeat center center;
+        background: url('/nine/img/n/icon/play-btn.png') no-repeat center center;
         background-size: vw(80) vw(80);
         @include mob() {
             width: vwm(130);
@@ -309,7 +309,7 @@
                 @include mob() {
                     width: vwm(50);
                     height: vwm(50);
-                    background: url(../img/menu-red.svg) no-repeat center center / cover;
+                    background: url(/nine/img/menu-red.svg) no-repeat center center / cover;
                     img {
                         display: none;
                     }
@@ -328,7 +328,7 @@
                     @include mob() {
                         width: vwm(50);
                         height: vwm(50);
-                        background-image: url(../img/menu.svg);
+                        background-image: url(/nine/img/menu.svg);
                     }
                 }
             }
