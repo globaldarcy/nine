@@ -9,13 +9,15 @@ import SExp from "../components/s-exp.astro";
 import SJoy from "../components/s-joy.astro";
 import SFear from "../components/s-fear.astro";
 import SOur from "../components/s-our.astro";
+import SUpside from "../components/s-upside.astro";
 ---
 
 <Layout title="Welcome to Demo.">
     <main class="ninebot">
         <NinebotHeader />
-        <div class="content">
+        <div class="content lazy-content hidden">
             <SNav />
+            <SUpside />
             <Skv />
             <STmu />
             <SExp />
@@ -30,15 +32,20 @@ import SOur from "../components/s-our.astro";
 <script>
     import axios from "axios";
     // 创建 Intersection Observer
-    var observer = new IntersectionObserver(function (entries, observer) {
+    const observer = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
                 // 元素进入视口，加载内容
-                // console.log(entry.target);
-                // entry.target.style.opacity = 1;
-                observer.unobserve(entry.target);
+                let lazyContent = entry.target;
+                lazyContent.classList.remove("hidden");
+                observer.unobserve(lazyContent);
             }
         });
+    });
+
+    let lazyContents = document.querySelectorAll(".lazy-content");
+    lazyContents.forEach((content) => {
+        observer.observe(content);
     });
 
     // 监听 main 元素
@@ -84,7 +91,7 @@ import SOur from "../components/s-our.astro";
                 return false;
             }
             currentNode.parentNode.replaceChild(targetNode, currentNode);
-            if (window.initExpSwiper != undefined) {
+            if (typeof window.initExpSwiper === "function") {
                 window.initExpSwiper();
             }
         });

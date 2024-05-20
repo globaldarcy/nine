@@ -1,6 +1,10 @@
 .ninebot {
     // common
     line-height: 1.5;
+    .hidden {
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
     .n-container {
         margin: 0 auto;
         width: vw(1820);
@@ -17,7 +21,7 @@
             padding: vwm(20) 0;
         }
     }
-    .num-mob show-mob{
+    .num-mob {
         font-size: vwm(36);
         line-height: vwm(50);
         color: #666;
@@ -154,12 +158,13 @@
     .n-header {
         width: 100%;
         padding: 0 vw(300);
-        background-color: #000;
+        background-color: #fff;
         position: sticky;
         top: 0;
         z-index: 999;
         @include mob() {
             padding: 0 vwm(15);
+            background-color: #000;
         }
         .nav {
             display: flex;
@@ -209,6 +214,20 @@
                         }
                     }
                 }
+                .logo-n {
+                    &.active,
+                    &:hover,
+                    &:active {
+                        @include mob() {
+                            .show-pc {
+                                display: block;
+                            }
+                            .show-mob {
+                                display: none;
+                            }
+                        }
+                    }
+                }
                 .logo-s {
                     margin-right: vw(20);
                     padding: 0 vw(10);
@@ -235,15 +254,9 @@
                         }
                         .active-after {
                             display: block;
-                            @include mob() {
-                                // display: none;
-                            }
                         }
                         .active-before {
                             display: none;
-                            @include mob() {
-                                // display: block;
-                            }
                         }
                     }
                     img {
