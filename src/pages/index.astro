@@ -51,7 +51,7 @@ import SOur from "../components/s-our.astro";
 
     async function getPage() {
         try {
-            const response = await axios.get("/main", {
+            const response = await axios.get("./main", {
                 signal: controller.signal,
             });
             isPending = false;
