@@ -302,40 +302,5 @@
             }
         }
     }
-    .n-footer {
-        border-top: 1px solid #dadada;
-        .footer-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: vw(20) 0;
-            width: vw(1320);
-            margin: 0 auto;
-            .footer-col {
-                width: 33.33%;
-                max-width: 33.33%;
-                flex: 0 0 33.33%;
-                &:nth-child(3){
-                    text-align: right;
-                }
-                a {
-                    display: block;
-                }
-                .link-n {
-                    font-size: vw(42);
-                }
-                .footer-line {
-                    width: vw(60);
-                    height: vw(3);
-                    background-color: #000;
-                    margin: 0 auto;
-                }
-                .link-s {
-                    font-size: vw(26);
-                    font-weight: 700;
-                    color: #c51601;
-                }
-            }
-        }
-    }
+   
 }
