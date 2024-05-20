@@ -196,6 +196,7 @@
     .n-kv {
         position: relative;
         margin-bottom: vw(40);
+        min-height: vw(800);
         .kv-content {
             position: absolute;
             top: 50%;
