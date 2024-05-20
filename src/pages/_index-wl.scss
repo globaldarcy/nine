@@ -182,7 +182,6 @@
             margin: 0 auto;
             .sub-nav-logo {
                 width: vw(50);
-                padding: vw(5);
             }
             .sub-nav-menu {
                 display: flex;
@@ -197,6 +196,7 @@
     .n-kv {
         position: relative;
         margin-bottom: vw(40);
+        min-height: vw(800);
         .kv-content {
             position: absolute;
             top: 50%;
