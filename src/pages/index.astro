@@ -109,6 +109,7 @@ import SOur from '../components/s-our.astro';
         }
         document.querySelector(".logo-s").classList.remove("active");
         document.querySelector(".logo-n").classList.add("active");
+        document.querySelector(".n-footer").classList.add("n");
     });
     siteS.addEventListener("click", function () {
         targetNode = document.querySelector(".content-ninebot");
@@ -118,5 +119,6 @@ import SOur from '../components/s-our.astro';
         targetNode.parentNode.replaceChild(currentNode, targetNode);
         document.querySelector(".logo-n").classList.remove("active");
         document.querySelector(".logo-s").classList.add("active");
+        document.querySelector(".n-footer").classList.remove("n");
     });
 </script>
