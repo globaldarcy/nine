@@ -1,27 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 import NinebotHeader from "../components/n/ninebot-header.astro";
 import NinebotFooter from "../components/n/ninebot-footer.astro";
-import SNav from '../components/s-nav.astro';
-import Skv from '../components/s-kv.astro';
-import STmu from '../components/s-tmu.astro';
-import SExp from '../components/s-exp.astro';
-import SJoy from '../components/s-joy.astro';
-import SFear from '../components/s-fear.astro';
-import SOur from '../components/s-our.astro';
+import SNav from "../components/s-nav.astro";
+import Skv from "../components/s-kv.astro";
+import STmu from "../components/s-tmu.astro";
+import SExp from "../components/s-exp.astro";
+import SJoy from "../components/s-joy.astro";
+import SFear from "../components/s-fear.astro";
+import SOur from "../components/s-our.astro";
 ---
 
 <Layout title="Welcome to Astro.">
     <main class="ninebot">
         <NinebotHeader />
         <div class="content">
-            <SNav/>
-            <Skv/>
-            <STmu/>
-            <SExp/>
-            <SJoy/>
-            <SFear/>
-            <SOur/>
+            <SNav />
+            <Skv />
+            <STmu />
+            <SExp />
+            <SJoy />
+            <SFear />
+            <SOur />
         </div>
         <NinebotFooter />
     </main>
@@ -93,10 +93,7 @@ import SOur from '../components/s-our.astro';
         page = getPage();
     });
 
-    const siteS = document.querySelector(".logo-s");
-    const siteN = document.querySelector(".logo-n");
-    const currentNode = document.querySelector(".content");
-    siteN.addEventListener("click", function () {
+    function selectNinebot() {
         if (isPending) {
             controller.abort();
             if (controller.signal.aborted) {
@@ -110,8 +107,9 @@ import SOur from '../components/s-our.astro';
         document.querySelector(".logo-s").classList.remove("active");
         document.querySelector(".logo-n").classList.add("active");
         document.querySelector(".n-footer").classList.add("n");
-    });
-    siteS.addEventListener("click", function () {
+    }
+
+    function selectSegway() {
         targetNode = document.querySelector(".content-ninebot");
         if (document.querySelector(".content-ninebot") == null) {
             return false;
@@ -120,5 +118,15 @@ import SOur from '../components/s-our.astro';
         document.querySelector(".logo-n").classList.remove("active");
         document.querySelector(".logo-s").classList.add("active");
         document.querySelector(".n-footer").classList.remove("n");
-    });
+    }
+
+    const siteS = document.querySelector(".logo-s");
+    const siteN = document.querySelector(".logo-n");
+    const siteFooterS = document.querySelector(".link-s");
+    const siteFooterN = document.querySelector(".link-n");
+    const currentNode = document.querySelector(".content");
+    siteN.addEventListener("click", selectNinebot);
+    siteS.addEventListener("click", selectSegway);
+    siteFooterN.addEventListener("click", selectNinebot);
+    siteFooterS.addEventListener("click", selectSegway);
 </script>
