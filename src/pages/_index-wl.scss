@@ -51,7 +51,7 @@
         top: vw(20);
         font-size: vw(28);
     }
-    .video-btn{
+    .video-btn {
         cursor: pointer;
         position: absolute;
         top: 50%;
@@ -60,9 +60,9 @@
         margin: 0 auto;
         width: vw(80);
         height: vw(80);
-        background: url("/img/n/icon/play-btn.png") no-repeat center center;
+        background: url('/img/n/icon/play-btn.png') no-repeat center center;
         background-size: vw(80) vw(80);
-        &.video-btn-kv{
+        &.video-btn-kv {
             top: auto;
             bottom: vw(50);
         }
@@ -102,8 +102,8 @@
                             bottom: 0;
                         }
                     }
-                    img{
-                        height: vw(60);
+                    img {
+                        height: vw(55);
                     }
                 }
                 .logo-s {
@@ -122,24 +122,23 @@
                             left: 0;
                             top: 0;
                         }
-                        .active-after{
+                        .active-after {
                             display: block;
                         }
-                        .active-before{
+                        .active-before {
                             display: none;
                         }
                     }
-                    img{
+                    img {
                         width: auto;
                         padding: vw(10) 0;
-                        &.active-before{
+                        &.active-before {
                             display: block;
                         }
-                        &.active-after{
+                        &.active-after {
                             display: none;
                         }
                     }
-
                 }
             }
             .nav-right {
@@ -173,7 +172,7 @@
     }
     .n-sub-nav {
         font-size: vw(16);
-        padding:vw(10) 0;
+        padding: vw(10) 0;
         border-bottom: 1px solid #dadada;
         .sub-nav-container {
             display: flex;
@@ -190,7 +189,7 @@
                 justify-content: space-between;
                 align-items: center;
                 .sub-nav-item {
-                    margin-left:vw(60);
+                    margin-left: vw(60);
                 }
             }
         }
@@ -308,5 +307,4 @@
             }
         }
     }
-
 }
