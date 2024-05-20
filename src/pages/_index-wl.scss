@@ -22,10 +22,13 @@
         }
     }
     .num-mob {
-        font-size: vwm(36);
         line-height: vwm(50);
         color: #666;
-        margin-bottom: vwm(10);
+        &.show-mob {
+            @include mob() {
+                display: inline-block !important;
+            }
+        }
     }
     .n-desc {
         font-size: vw(16);
@@ -49,7 +52,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         @include mob() {
-          font-size: vwm(38);
+            font-size: vwm(38);
         }
     }
     .white {
@@ -121,7 +124,7 @@
             display: block !important;
         }
     }
-    .mob-title{
+    .mob-title {
         @include mob() {
             font-size: vwm(60);
             font-weight: 700;
@@ -130,28 +133,27 @@
             padding: 0;
         }
     }
-    .open-icon{
+    .open-icon {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         right: vwm(20);
-        &.active{
-            .line-b{
+        &.active {
+            .line-b {
                 display: none;
             }
         }
-        .icon-line{
+        .icon-line {
             width: vwm(40);
             height: 2px;
             background-color: #666;
-            &.line-b{
+            &.line-b {
                 transform: rotate(90deg);
                 margin-top: -2px;
             }
-
         }
     }
-    .title-content{
+    .title-content {
         position: relative;
     }
     // common end
@@ -382,12 +384,12 @@
                     font-size: vwm(110);
                     margin-bottom: vwm(20);
                 }
-                .show-mob{
-                    display: inline-block!important;
+                .show-mob {
+                    display: inline-block !important;
                 }
             }
-            .n-desc{
-                span{
+            .n-desc {
+                span {
                     color: #000;
                 }
             }
@@ -399,20 +401,19 @@
             transform: translateX(-50%);
             .pagination-item {
                 display: inline-block;
-                width: vw(160);
-                height: 2px;
-                background-color: #fff;
+                width: vwm(68);
+                height: vwm(6);
                 border-radius: 2px;
-                opacity: 0.6;
-                &:first-child{
-                    opacity: 1;
+                background-color: #948280;
+                &.active {
+                    background-color: #fff;
                 }
             }
         }
     }
     .n-new {
         @include mob() {
-          display: none;
+            display: none;
         }
         .new-content {
             .new-row {
@@ -468,8 +469,8 @@
             border-top: 1px solid #999;
             border-bottom: 1px solid #999;
         }
-        .city-container{
-            .city-item{
+        .city-container {
+            .city-item {
                 @include mob() {
                     margin-bottom: vwm(40);
                 }
@@ -480,26 +481,24 @@
                 bottom: 0;
                 padding: vw(30);
                 @include mob() {
-                  position: relative;
-                  left: auto;
-                  bottom: auto;
-                  padding: 0;
-                  margin-top: vwm(20);
+                    position: relative;
+                    left: auto;
+                    bottom: auto;
+                    padding: 0;
+                    margin-top: vwm(20);
                 }
                 .n-desc {
                     min-height: auto;
                 }
-                .n-more{
+                .n-more {
                     @include mob() {
                         position: absolute;
                         right: vwm(10);
-                        top:vwm(10);
+                        top: vwm(10);
                     }
-
                 }
             }
         }
-
     }
     .n-fun,
     .n-explore {
@@ -523,11 +522,15 @@
             }
         }
     }
-    .n-explore{
+    .n-fun {
+        @include mob() {
+            border-bottom: 1px solid #999;
+        }
+    }
+    .n-explore {
         @include mob() {
             border-bottom: none;
             margin-bottom: vwm(120);
-            border-bottom: 1px solid #999;
         }
         .fun-content {
             .fun-row {
@@ -548,12 +551,25 @@
                                 margin-bottom: vwm(20);
                             }
                         }
-                        .fun-summary{
+                        .fun-summary {
                             @include mob() {
                                 position: absolute;
                                 top: vwm(50);
                                 left: vwm(30);
-                                width:vwm(400)
+                                width: vwm(400);
+                            }
+                            .n-desc {
+                                line-height: auto;
+                                height: auto;
+                                min-height: auto;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 1;
+                                -webkit-box-orient: vertical;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                @include mob() {
+                                    -webkit-line-clamp: 2;
+                                }
                             }
                         }
                     }
@@ -561,7 +577,8 @@
             }
         }
     }
-    .n-about,.n-about-mob {
+    .n-about,
+    .n-about-mob {
         position: relative;
         .about-contanier {
             position: relative;
@@ -585,30 +602,30 @@
             }
         }
     }
-    .n-about-mob{
-        .about-contanier{
-            .about-row{
+    .n-about-mob {
+        .about-contanier {
+            .about-row {
                 display: flex;
                 flex-wrap: wrap;
                 margin: 0 vwm(-8);
-                .about-col{
+                .about-col {
                     max-width: 50%;
-                    width:50%;
+                    width: 50%;
                     flex: 0 0 50%;
                     padding: vwm(8) vwm(8) vwm(8) vwm(8);
-                    &:first-child{
+                    &:first-child {
                         width: 100%;
                         max-width: 100%;
                         flex: 0 0 100%;
                     }
 
-                    .about-item{
+                    .about-item {
                         position: relative;
                         text-align: center;
-                        .about-content-mob{
+                        .about-content-mob {
                             top: 50%;
                         }
-                        .n-description{
+                        .n-description {
                             font-size: vwm(32);
                         }
                     }
