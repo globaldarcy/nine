@@ -84,9 +84,10 @@ import SOur from "../components/s-our.astro";
                 return false;
             }
             currentNode.parentNode.replaceChild(targetNode, currentNode);
-            if (window.initExpSwiper != undefined) {
+            if (typeof window.initExpSwiper === 'function') {
                 window.initExpSwiper();
             }
+
         });
     }
 
