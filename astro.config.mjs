@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
     base: '/',
-    trailingSlash: "never",
+    trailingSlash: "ignore",
     server: {
         host: true,
         open: "/"
