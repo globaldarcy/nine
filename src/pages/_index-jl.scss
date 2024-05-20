@@ -677,6 +677,9 @@
         background: #000;
         overflow: hidden;
         border-top: 1px solid #454545;
+        @include mob() {
+            height: vwm(136);
+        }
 
         .footer-row {
             display: flex;
@@ -685,7 +688,11 @@
             padding: vw(20) 0;
             width: vw(1320);
             margin: 0 auto;
-
+            @include mob() {
+                width: 100%;
+                padding: 0 vwm(15);
+                height: 100%;
+            }
             .footer-col {
                 width: 33.33%;
                 max-width: 33.33%;
@@ -695,13 +702,12 @@
                     text-align: right;
                 }
 
-                a {
-                    //display: block;
-                }
-
                 .link-n {
                     font-size: vw(26);
                     color: #ababab;
+                    @include mob() {
+                        font-size: vwm(32);
+                    }
                 }
 
                 .footer-line {
@@ -710,6 +716,9 @@
                     background-color: #000;
                     margin: 0 auto;
                     position: relative;
+                    @include mob() {
+                        transform: scale(2);
+                    }
 
                     .s-fear-position {
                         width: vw(170);
@@ -771,6 +780,9 @@
                     font-size: vw(42);
                     font-weight: 700;
                     color: #c51601;
+                    @include mob() {
+                        font-size: vwm(42);
+                    }
                 }
             }
         }
@@ -784,6 +796,9 @@
                     .link-n {
                         font-size: vw(42);
                         color: #000;
+                        @include mob() {
+                            font-size: vwm(42);
+                        }
                     }
 
                     .footer-line {
@@ -801,6 +816,9 @@
                         font-size: vw(26);
                         font-weight: 700;
                         color: #c51601;
+                        @include mob() {
+                            font-size: vwm(32);
+                        }
                     }
                 }
             }
@@ -947,7 +965,7 @@
                 }
 
             }
-           
+
         }
         .s-upside-off {
             @include mob() {
@@ -986,13 +1004,13 @@
                         }
                     }
                 }
-                
+
             }
-            
+
         }
         .s-upside-ride {
             @include mob() {
-               
+
             }
 
             .s-upside-ride-for {
@@ -1033,7 +1051,7 @@
                         .s-fear-position-wrap {
                             position: relative;
 
-                       
+
 
                         }
                     }
@@ -1041,7 +1059,7 @@
                 }
 
             }
-           
+
         }
         .s-upside-about {
             @include mob() {
