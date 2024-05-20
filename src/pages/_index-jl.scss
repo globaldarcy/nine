@@ -640,7 +640,7 @@
 
 
 .ninebot {
-    
+
     .n-footer {
         &.s {
             width: 100%;
@@ -651,9 +651,9 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-               
-               
-               
+
+
+
                 .footer-col {
                     width: 33.33%;
                     max-width: 33.33%;
@@ -740,7 +740,7 @@
                         font-size: vw(26);
                     }
                     .link-s {
-    
+
                         font-size: vw(42);
                         font-weight: 700;
                         color: #c50609;
@@ -748,156 +748,5 @@
                 }
             }
         }
-
-    }
-
-    .n-header {
-        &.s {
-            // padding: 0 vw(300);
-           // border-bottom: 1px solid #000;
-          
-            .nav {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: vw(27) 0 0 0;
-
-                .nav-logo {
-                    position: relative;
-
-                    
-                    .logo-n {
-                        width: vw(100);
-                        display: inline-block;
-                        position: relative;
-                        cursor: pointer;
-
-                        @media (any-hover: hover) {
-                            &:hover {
-                                &::after {
-                                    content: '';
-                                    background: #c50609;
-                                    position: absolute;
-                                    width: 100%;
-                                    height: 2px;
-                                    left: 0;
-                                    top: vw(-4);
-                                }
-                            }
-                        }
-
-                        &:active {
-                            &::after {
-                                content: '';
-                                background: #c50609;
-                                position: absolute;
-                                width: 75%;
-                                height: 3px;
-                                left: 18%;
-                                bottom: vw(-12);
-                            }
-                        }
-                    }
-
-                    .logo-s {
-                       // margin-left: vw(20);
-                        position: relative;
-                        & > img {
-                            position: absolute;
-                            top:vw(-36);
-                            left: 0;
-                        }
-                        &::after {
-                            content: '';
-                            background: #c50609;
-                            position: absolute;
-                            width: vw(99);
-                            height: 2px;
-                            left: 0;
-                            top: vw(-37);
-                        }
-                    }
-
-                    .logo-n {
-                        margin-left: vw(20);
-
-                        &::after {
-                            display: none;
-                            content: '';
-                            background: #c50609;
-                            position: absolute;
-                            width: 75%;
-                            height: 2px;
-                            left: 18%;
-                            bottom: vw(-10);
-                        }
-
-                        &:hover {
-                            &::after {
-                                display: block;
-                            }
-                        }
-                    }
-                }
-
-                .nav-right {
-                    display: flex;
-                    align-items: center;
-                    font-size: vw(16);
-                    color: #666;
-                    margin-top: vw(-10);
-                    .nav-menu {
-                        display: flex;
-
-                        .nav-item {
-                            margin: 0 vw(15);
-                        }
-                    }
-
-                    .user-logo {
-                        cursor: pointer;
-                        width: vw(20);
-                        margin: 0 vw(30) 0 vw(15);
-
-                        .user-img {
-                            vertical-align: center;
-                        }
-                    }
-
-                    .share-btn {
-                        background-color: #c50609;
-                        color: #fff;
-                        padding: 0 vw(15);
-                        border-radius: vw(20);
-                        line-height: vw(33);
-                    }
-                }
-            }
-
-            .sub-nav {
-                font-size: vw(16);
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: vw(1320);
-                padding: 0 0 vw(20) 0;
-
-                .sub-nav-logo {
-                    width: vw(50);
-                }
-
-                .sub-nav-menu {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-
-                    .sub-nav-item {
-                        margin: 0 vw(30);
-                        
-                    }
-                }
-            }
-        }
-
     }
 }
