@@ -71,7 +71,7 @@
     .n-header {
         width: 100%;
         padding: 0 vw(300);
-        background-color: #fff;
+        background-color: #000;
         position: sticky;
         top: 0;
         z-index: 999;
@@ -153,13 +153,13 @@
                         .active-after {
                             display: block;
                             @include mob() {
-                                display: none;
+                                // display: none;
                             }
                         }
                         .active-before {
                             display: none;
                             @include mob() {
-                                display: block;
+                                // display: block;
                             }
                         }
                     }
@@ -218,6 +218,7 @@
             }
         }
         &.n {
+            background-color: #fff;
             .nav {
                 @include mob() {
                     height: vwm(100);
