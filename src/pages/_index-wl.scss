@@ -85,19 +85,8 @@
                     display: inline-block;
                     position: relative;
                     cursor: pointer;
-                    @media (any-hover: hover) {
-                        &:hover {
-                            &::after {
-                                content: '';
-                                background: #c51601;
-                                position: absolute;
-                                width: 75%;
-                                height: 2px;
-                                left: 18%;
-                                bottom: vw(-10);
-                            }
-                        }
-                    }
+                    &.active,
+                    &:hover,
                     &:active {
                         &::after {
                             content: '';
@@ -110,16 +99,21 @@
                         }
                     }
                 }
-                .logo-n {
-                    margin-left: vw(20);
-                    &::after {
-                        content: '';
-                        background: #c51601;
-                        position: absolute;
-                        width: 75%;
-                        height: 2px;
-                        left: 18%;
-                        bottom: vw(-10);
+                .logo-s {
+                    margin-right: vw(20);
+                    &.active,
+                    &:hover,
+                    &:active {
+                        background-color: #000;
+                        &::after {
+                            content: '';
+                            background: #c51601;
+                            position: absolute;
+                            width: 75%;
+                            height: 2px;
+                            left: 18%;
+                            bottom: vw(-10);
+                        }
                     }
                 }
             }

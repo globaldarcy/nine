@@ -1,29 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import SHeader from '../components/s-header.astro';
-import SNav from '../components/s-nav.astro';
-import Skv from '../components/s-kv.astro';
-import STmu from '../components/s-tmu.astro';
-import SExp from '../components/s-exp.astro';
-import SJoy from '../components/s-joy.astro';
-import SFear from '../components/s-fear.astro';
-import SOur from '../components/s-our.astro';
-import SFooter from '../components/s-footer.astro';
+import Layout from "../layouts/Layout.astro";
+import NinebotSubNav from "../components/n/ninebot-sub-nav.astro";
+import NinebotKV from "../components/n/ninebot-kv.astro";
+import NinebotNew from "../components/n/ninebot-new.astro";
+import NinebotCity from "../components/n/ninebot-city.astro";
+import NinebotFun from "../components/n/ninebot-fun.astro";
+import NinebotAbout from "../components/n/ninebot-about.astro";
+import NinebotExplore from "../components/n/ninebot-explore.astro";
 ---
 
 <Layout title="Welcome to Astro.">
 	<main class="ninebot">
-		<div class="content-segway">
-            <!-- <SHeader/> -->
-            <SNav/>
-            <Skv/>
-            <STmu/>
-            <SExp/>
-            <SJoy/>
-            <SFear/>
-            <SOur/>
-            <!-- <SFooter/> -->
+		<div class="content-ninebot">
+            <NinebotSubNav />
+            <NinebotKV />
+            <NinebotNew />
+            <NinebotCity />
+            <NinebotFun />
+            <NinebotAbout />
+            <NinebotExplore />
         </div>
 	</main>
 </Layout>

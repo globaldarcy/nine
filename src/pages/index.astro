@@ -1,36 +1,31 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
 import NinebotHeader from "../components/n/ninebot-header.astro";
-import NinebotSubNav from "../components/n/ninebot-sub-nav.astro";
-import NinebotKV from "../components/n/ninebot-kv.astro";
-import NinebotNew from "../components/n/ninebot-new.astro";
-import NinebotCity from "../components/n/ninebot-city.astro";
-import NinebotFun from "../components/n/ninebot-fun.astro";
-import NinebotAbout from "../components/n/ninebot-about.astro";
-import NinebotExplore from "../components/n/ninebot-explore.astro";
 import NinebotFooter from "../components/n/ninebot-footer.astro";
+import SNav from '../components/s-nav.astro';
+import Skv from '../components/s-kv.astro';
+import STmu from '../components/s-tmu.astro';
+import SExp from '../components/s-exp.astro';
+import SJoy from '../components/s-joy.astro';
+import SFear from '../components/s-fear.astro';
+import SOur from '../components/s-our.astro';
 ---
 
 <Layout title="Welcome to Astro.">
     <main class="ninebot">
         <NinebotHeader />
         <div class="content">
-            <NinebotSubNav />
-            <NinebotKV />
-            <NinebotNew />
-            <NinebotCity />
-            <NinebotFun />
-            <NinebotAbout />
-            <NinebotExplore />
+            <SNav/>
+            <Skv/>
+            <STmu/>
+            <SExp/>
+            <SJoy/>
+            <SFear/>
+            <SOur/>
         </div>
         <NinebotFooter />
     </main>
 </Layout>
-
-<style lang="scss">
-    main {
-    }
-</style>
 
 <script>
     import axios from "axios";
@@ -76,7 +71,7 @@ import NinebotFooter from "../components/n/ninebot-footer.astro";
             const htmlDocument = parser.parseFromString(data, "text/html");
 
             // 获取指定的 DOM 节点
-            targetNode = htmlDocument.querySelector(".content-segway");
+            targetNode = htmlDocument.querySelector(".content-ninebot");
 
             // 对节点的内容进行预加载
             targetNode.querySelectorAll("img").forEach((item) => {
@@ -101,7 +96,7 @@ import NinebotFooter from "../components/n/ninebot-footer.astro";
     const siteS = document.querySelector(".logo-s");
     const siteN = document.querySelector(".logo-n");
     const currentNode = document.querySelector(".content");
-    siteS.addEventListener("click", function () {
+    siteN.addEventListener("click", function () {
         if (isPending) {
             controller.abort();
             if (controller.signal.aborted) {
@@ -112,12 +107,16 @@ import NinebotFooter from "../components/n/ninebot-footer.astro";
         } else {
             setHtml();
         }
+        document.querySelector(".logo-s").classList.remove("active");
+        document.querySelector(".logo-n").classList.add("active");
     });
-    siteN.addEventListener("click", function () {
-        targetNode = document.querySelector(".content-segway");
-        if (document.querySelector(".content-segway") == null) {
+    siteS.addEventListener("click", function () {
+        targetNode = document.querySelector(".content-ninebot");
+        if (document.querySelector(".content-ninebot") == null) {
             return false;
         }
         targetNode.parentNode.replaceChild(currentNode, targetNode);
+        document.querySelector(".logo-n").classList.remove("active");
+        document.querySelector(".logo-s").classList.add("active");
     });
 </script>
