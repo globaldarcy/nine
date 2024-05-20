@@ -1,6 +1,10 @@
 .ninebot {
     // common
     line-height: 1.5;
+    .hidden {
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
     .n-container {
         margin: 0 auto;
         width: vw(1820);
