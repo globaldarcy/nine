@@ -101,7 +101,8 @@ import SUpside from "../components/s-upside.astro";
         page = getPage();
     });
 
-    function selectNinebot() {
+    function selectNinebot(e) {
+        e.preventDefault();
         if (document.querySelector(".content") == null) {
             return false;
         }
@@ -119,9 +120,15 @@ import SUpside from "../components/s-upside.astro";
         document.querySelector(".logo-n").classList.add("active");
         document.querySelector(".n-header").classList.add("n");
         document.querySelector(".n-footer").classList.add("n");
+        if (!e.target.classList.contains("link-n")) {
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 500);
+        }
     }
 
-    function selectSegway() {
+    function selectSegway(e) {
+        e.preventDefault();
         targetNode = document.querySelector(".content-ninebot");
         if (document.querySelector(".content-ninebot") == null) {
             return false;
@@ -131,6 +138,11 @@ import SUpside from "../components/s-upside.astro";
         document.querySelector(".logo-s").classList.add("active");
         document.querySelector(".n-header").classList.remove("n");
         document.querySelector(".n-footer").classList.remove("n");
+        if (!e.target.classList.contains("link-s")) {
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 500);
+        }
     }
 
     const siteS = document.querySelector(".logo-s");
