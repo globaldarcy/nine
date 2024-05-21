@@ -1,0 +1,239 @@
+<!--
+
+    https://codepen.io/ndeisler/pen/wvywwvj
+    https://codepen.io/noeldelgado/pen/BaogqYy
+    https://codepen.io/shreyaskothakonda/pen/eYZXMyX
+    https://codepen.io/hexagoncircle/details/LYpaPQp
+    https://codepen.io/jh3y/details/JjVRGwR
+    https://codepen.io/ig_design/details/XWXzrWa
+    https://codepen.io/GreenSock/pen/eYdyVVe
+    https://codepen.io/jh3y/pen/ExPVzBY
+    https://codepen.io/jh3y/details/eYbYydG
+    https://codepen.io/ecemgo/details/eYboyMe
+    https://codepen.io/GreenSock/pen/bGaWjpw
+    https://codepen.io/cameronknight/pen/qBNvrRQ
+ -->
+
+<div class="container">
+    <section>
+        <h1>Vertical image loop with scroll acceleration with gsap</h1>
+
+        <h2 class="credit"></h2>
+    </section>
+    <div class="gallery">
+        <div class="col">
+            <div class="image">
+                <img src="https://picsum.photos/940/650?random=1032471310324713.jpeg?cs=srgb&dl=pexels-taha-samet-arslan-10324713.jpg" alt="" />
+            </div>
+            <div class="image">
+                <img src="https://picsum.photos/940/650?random=1053388510533885.jpeg?auto=compress&cs=tinysrgb&h=650&w=940%20940w" alt="" />
+            </div>
+            <div class="image">
+                <img src="https://picsum.photos/940/650?random=1025321310253213.jpeg?cs=srgb&dl=pexels-beepin-10253213.jpg" alt="" />
+            </div>
+        </div>
+        <div class="col">
+            <div class="image">
+                <img src="https://picsum.photos/940/650?random=10050979/" alt="" />
+            </div>
+            <div class="image">
+                <img src="https://picsum.photos/940/650?random=11286601128660.jpeg?cs=srgb&dl=pexels-nur-andi-ravsanjani-gusma-1128660.jpg" alt="" />
+            </div>
+            <div class="image">
+                <img src="https://picsum.photos/940/650?random=96992939699293.jpeg?cs=srgb&dl=pexels-lada-rezantseva-9699293.jpg" alt="" />
+            </div>
+        </div>
+        <div class="col">
+            <div class="image">
+                <img src="https://picsum.photos/940/650?random=64055756405575.jpeg?cs=srgb&dl=pexels-daria-sannikova-6405575.jpg" alt="" />
+            </div>
+            <div class="image">
+                <img src="https://picsum.photos/940/650?random=1016252610162526.jpeg?cs=srgb&dl=pexels-svetlana%F0%9F%8E%9E-10162526.jpg" alt="" />
+            </div>
+            <div class="image">
+                <img src="https://picsum.photos/940/650?random=43948074394807.jpeg?cs=srgb&dl=pexels-woodysmedia-4394807.jpg" alt="" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+    @import "../../styles/_common.scss";
+    .container {
+        position: relative;
+        section {
+            padding: 10vw;
+            height: 100%;
+            min-height: 500vh;
+            overflow: visible;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-y: visible;
+        }
+
+        .credit {
+            text-align: center;
+            z-index: 999;
+            font-size: 0.8rem;
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+
+            a {
+                color: #fff;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-weight: 800;
+            margin: 2rem auto;
+            font-size: clamp(3vw, 2rem, 4rem);
+            text-align: center;
+            z-index: 999;
+            max-width: 800px;
+            mix-blend-mode: difference;
+            pointer-events: none;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: grid;
+            place-items: center;
+        }
+
+        .gallery {
+            z-index: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: visible;
+
+            @media (max-width: 768px) {
+                width: 160%;
+            }
+        }
+
+        .col {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            width: 100%;
+            align-self: flex-start;
+            justify-self: flex-start;
+        }
+
+        .col:nth-child(2) {
+            align-self: flex-end;
+            justify-self: flex-end;
+        }
+
+        .image {
+            width: 100%;
+            filter: saturate(0);
+            padding: 1rem;
+        }
+
+        .image:hover {
+            z-index: 99 !important;
+            filter: saturate(1);
+        }
+
+        img {
+            transition: 0.3s ease-out;
+            overflow: hidden;
+            box-shadow:
+                0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+                0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+                0 12.5px 10px rgba(0, 0, 0, 0.06),
+                0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+                0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+                0 100px 80px rgba(0, 0, 0, 0.12);
+            width: 100%;
+        }
+    }
+</style>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+    // ScrollTrigger.normalizeScroll(true);
+    console.clear();
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const additionalY = { val: 0 };
+    let additionalYAnim;
+    let offset = 0;
+    const cols = gsap.utils.toArray(".col");
+
+    document.querySelectorAll(".col").forEach((col, i) => {
+        const images = col.childNodes;
+
+        // DUPLICATE IMAGES FOR LOOP
+        images.forEach((image) => {
+            var clone = image.cloneNode(true);
+            col.appendChild(clone);
+        });
+
+        // SET ANIMATION
+        images.forEach((item) => {
+            let columnHeight = item.parentElement.clientHeight;
+            let direction = i % 2 !== 0 ? "+=" : "-="; // Change direction for odd columns
+
+            gsap.to(item, {
+                y: direction + Number(columnHeight / 2),
+                duration: 20,
+                repeat: -1,
+                ease: "none",
+                modifiers: {
+                    y: gsap.utils.unitize((y) => {
+                        if (direction == "+=") {
+                            offset += additionalY.val;
+                            y = (parseFloat(y) - offset) % (columnHeight * 0.5);
+                        } else {
+                            offset += additionalY.val;
+                            y = (parseFloat(y) + offset) % -Number(columnHeight * 0.5);
+                        }
+
+                        return y;
+                    }),
+                },
+            });
+        });
+    });
+
+    const imagesScrollerTrigger = ScrollTrigger.create({
+        trigger: "section",
+        start: "top 50%",
+        end: "bottom 50%",
+        onUpdate: function (self) {
+            const velocity = self.getVelocity();
+            if (velocity > 0) {
+                if (additionalYAnim) additionalYAnim.kill();
+                additionalY.val = -velocity / 2000;
+                additionalYAnim = gsap.to(additionalY, { val: 0 });
+            }
+            if (velocity < 0) {
+                if (additionalYAnim) additionalYAnim.kill();
+                additionalY.val = -velocity / 3000;
+                additionalYAnim = gsap.to(additionalY, { val: 0 });
+            }
+        },
+    });
+</script>

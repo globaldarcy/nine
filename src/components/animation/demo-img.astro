@@ -1,0 +1,61 @@
+<div class="demo-ani">
+    <section class="comparisonSection">
+        <div class="comparisonImage beforeImage">
+            <img src="https://assets.codepen.io/16327/before.jpg" alt="before" />
+        </div>
+        <div class="comparisonImage afterImage">
+            <img src="https://assets.codepen.io/16327/after.jpg" alt="after" />
+        </div>
+    </section>
+</div>
+<style lang="scss">
+    .demo-ani {
+        height: 200vh;
+        .comparisonSection {
+            position: relative;
+            padding-bottom: 100vh;
+        }
+        .comparisonImage {
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                object-fit: cover;
+            }
+        }
+        .afterImage {
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            transform: translate(100%, 0px);
+        }
+        .afterImage img {
+            transform: translate(-100%, 0px);
+        }
+    }
+</style>
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.normalizeScroll(true);
+    const el = document.querySelector(".comparisonSection");
+
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: el,
+            start: "center center",
+            // end: () => "+=" + el.offsetWidth,
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+        },
+        defaults: { ease: "none" },
+    });
+
+    tl.fromTo(el.querySelector(".afterImage"), { xPercent: 100, x: 0 }, { xPercent: 0 }).fromTo(el.querySelector(".afterImage img"), { xPercent: -100, x: 0 }, { xPercent: 0 }, 0);
+</script>

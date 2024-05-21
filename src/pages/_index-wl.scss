@@ -100,7 +100,7 @@ html {
         margin: 0 auto;
         width: vw(80);
         height: vw(80);
-        background: url('/nine/img/n/icon/play-btn.png') no-repeat center center;
+        background: url("/nine/img/n/icon/play-btn.png") no-repeat center center;
         background-size: vw(80) vw(80);
         @include mob() {
             width: vwm(130);
@@ -200,7 +200,7 @@ html {
                     &:hover,
                     &:active {
                         &::after {
-                            content: '';
+                            content: "";
                             background: #c51601;
                             position: absolute;
                             width: 100%;
@@ -250,7 +250,7 @@ html {
                             background-color: transparent;
                         }
                         &::after {
-                            content: '';
+                            content: "";
                             background: #c51601;
                             position: absolute;
                             width: 100%;
