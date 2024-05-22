@@ -408,10 +408,9 @@
 
     function loadModel() {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.registerPlugin(DrawSVGPlugin);
-        gsap.set("#line-length", { drawSVG: 0 });
-        gsap.set("#line-wingspan", { drawSVG: 0 });
-        gsap.set("#circle-phalange", { drawSVG: 0 });
+        // gsap.set("#line-length", { drawSVG: 0 });
+        // gsap.set("#line-wingspan", { drawSVG: 0 });
+        // gsap.set("#circle-phalange", { drawSVG: 0 });
 
         var object;
 
@@ -507,7 +506,7 @@
         });
 
         gsap.to("#line-length", {
-            drawSVG: 100,
+            // drawSVG: 100,
             scrollTrigger: {
                 trigger: ".length",
                 scrub: true,
@@ -517,7 +516,7 @@
         });
 
         gsap.to("#line-wingspan", {
-            drawSVG: 100,
+            // drawSVG: 100,
             scrollTrigger: {
                 trigger: ".wingspan",
                 scrub: true,
@@ -527,7 +526,7 @@
         });
 
         gsap.to("#circle-phalange", {
-            drawSVG: 100,
+            // drawSVG: 100,
             scrollTrigger: {
                 trigger: ".phalange",
                 scrub: true,
@@ -538,7 +537,7 @@
 
         gsap.to("#line-length", {
             opacity: 0,
-            drawSVG: 0,
+            // drawSVG: 0,
             scrollTrigger: {
                 trigger: ".length",
                 scrub: true,
@@ -549,7 +548,7 @@
 
         gsap.to("#line-wingspan", {
             opacity: 0,
-            drawSVG: 0,
+            // drawSVG: 0,
             scrollTrigger: {
                 trigger: ".wingspan",
                 scrub: true,
@@ -560,7 +559,7 @@
 
         gsap.to("#circle-phalange", {
             opacity: 0,
-            drawSVG: 0,
+            // drawSVG: 0,
             scrollTrigger: {
                 trigger: ".phalange",
                 scrub: true,
