@@ -1,0 +1,531 @@
+<div class="container-slide">
+    <div class="main-tool-bar-wrapper">
+        <div class="main-tool-bar">
+        </div>
+    </div>
+
+    <div id="section1" class="section-1-wrapper">
+        <section class="section-1">
+            <div class="content-wrapper">
+                <h1>Lorem ipsum dolor sit amet</h1>
+                <p>Pellentesque leo neque, varius non condimentum eu, mattis in turpis. Sed eget magna viverra, sagittis ipsum laoreet, placerat nulla.</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="section2" class="section-2-wrapper d-flex flex-nowrap">
+        <section class="h-panel h-panel1 section large">
+            <h2>Maecenas eu leo vitae elit lobortis vestibulum.</h2>
+        </section>
+        <section class="h-panel h-panel2 section dark small">
+            <h2>Proin feugiat dui id sapien congue</h2>
+        </section>
+        <section class="h-panel h-panel3 section small">
+            <h2>Etiam maximus purus lectus</h2>
+        </section>
+        <section class="h-panel h-panel4 section large">
+            <h2>Pellentesque leo neque</h2>
+        </section>
+    </div>
+
+    <div id="section3" class="section-3-wrapper">
+        <div class="container">
+            <div class="content-wrapper">
+                <div id="upperWrap">
+                    <div id="upper">Aliquam a fringilla elit.</div>
+                </div>
+                <div id="line"></div>
+                <div id="lowerWrap">
+                    <div id="lower">Integer egestas diam id erat auctor ullamcorper.</div>
+                </div>
+            </div>
+            <div class="skew-wrapper">
+                <img width="240" height="300" src="https://picsum.photos/240/300?random=1" alt="" class="skew" />
+                <img width="240" height="300" src="https://picsum.photos/240/300?random=2" alt="" class="skew" />
+                <img width="240" height="300" src="https://picsum.photos/240/300?random=3" alt="" class="skew" />
+                <img width="240" height="300" src="https://picsum.photos/240/300?random=4" alt="" class="skew" />
+                <img width="240" height="300" src="https://picsum.photos/240/300?random=5" alt="" class="skew" />
+                <img width="240" height="300" src="https://picsum.photos/240/300?random=6" alt="" class="skew" />
+                <img width="240" height="300" src="https://picsum.photos/240/300?random=7" alt="" class="skew" />
+                <img width="240" height="300" src="https://picsum.photos/240/300?random=8" alt="" class="skew" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+    .container-slide {
+        position: relative;
+        width: 100%;
+        overflow-x: hidden;
+
+        h1 {
+            font-size: 5rem;
+            line-height: 5rem;
+        }
+        h2 {
+            font-size: 4rem;
+            padding: 0 40px;
+        }
+        h3 {
+            font-family: "Roboto";
+            text-transform: uppercase;
+            font-size: 3rem;
+            color: #65743a;
+            margin: 0;
+        }
+        h4 {
+            font-family: "Roboto";
+            text-transform: uppercase;
+            font-size: 2rem;
+            color: #d9d9d9;
+            margin: 0;
+        }
+
+        .main-tool-bar-wrapper {
+            display: none;
+        }
+        .main-tool-bar {
+            z-index: 1000;
+            height: 60px;
+            background: rgba(0, 0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 0;
+            transition: ease 0.4s;
+            .hamburger {
+                position: relative;
+                right: 20px;
+                z-index: 1000 !important;
+                cursor: pointer;
+                svg {
+                    max-width: 30px;
+                    max-height: 30px;
+                    transform: rotate(90deg);
+                    path {
+                        stroke: #d9d9d9;
+                    }
+                }
+            }
+            img {
+                width: 50px;
+                height: 50px;
+                padding-left: 20px;
+                transition: ease 0.4s;
+            }
+            &--scrolled {
+                height: 40px;
+                background-color: #d9d9d9;
+                .hamburger {
+                    svg {
+                        path {
+                            stroke: #14121e;
+                        }
+                    }
+                }
+                img {
+                    width: 45px;
+                    height: 45px;
+                    padding-top: 5px;
+                }
+            }
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+            width: 40%;
+            opacity: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgb(91, 110, 95);
+            a {
+                background-color: transparent;
+                color: inherit;
+                -webkit-text-decoration: inherit;
+                text-decoration: inherit;
+                transition: 0.15s ease;
+            }
+        }
+        .menu-content {
+            width: 80%;
+            height: 100%;
+            overflow-x: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            transition-delay: 0.1s;
+            background-color: rgba(48, 74, 54, 1);
+        }
+
+        .menu-list {
+            list-style: none;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 40px;
+
+            li {
+                width: fit-content;
+                overflow: hidden;
+            }
+        }
+
+        .menu-link {
+            font-size: 2rem;
+            display: inline-block;
+            transform: translateY(0);
+            transition: 0.15s ease;
+
+            &:hover {
+                color: white;
+                -webkit-text-fill-color: rgba(255, 255, 255, 0);
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: #fff;
+            }
+        }
+
+        .section-1-wrapper {
+            section {
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                background-color: #14121e;
+                .content-wrapper {
+                    max-width: 600px;
+                    margin: 0 auto 0 40px;
+                    h1 {
+                        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+                        transform: translateY(100px);
+                        opacity: 0;
+                        margin-bottom: 20px;
+                        color: #d9d9d9;
+                    }
+                    p {
+                        max-width: 800px;
+                        margin: 0 auto;
+                        font-size: 1.5rem;
+                        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+                        transform: translateY(100px);
+                        color: #94e36f;
+                    }
+                }
+            }
+        }
+        .section-2-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            .h-panel {
+                font-size: 5rem;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-shrink: 0;
+                background-color: #a8a0c4;
+                h2 {
+                    color: #f8f8f8;
+                }
+                &.h-panel1 {
+                    background: url(https://picsum.photos/1500/1500?random=76) no-repeat center center / cover;
+                }
+                &.h-panel2 {
+                    background: url(https://picsum.photos/1500/1500?random=72) no-repeat center center / cover;
+                }
+                &.h-panel3 {
+                    background: url(https://picsum.photos/1500/1500?random=73) no-repeat center center / cover;
+                }
+                &.h-panel4 {
+                    background: url(https://picsum.photos/1500/1500?random=75) no-repeat center center / cover;
+                }
+            }
+            .large {
+                width: 100vw;
+                background-color: #1d738d;
+                color: white;
+            }
+            .small {
+                width: 70vw;
+            }
+            .dark {
+                color: white;
+                background-color: #420527;
+            }
+            .center-marker {
+                position: fixed;
+                width: 2px;
+                height: 100vh;
+                background: tomato;
+                top: 0;
+                left: calc(50vw - 1px);
+            }
+            section {
+                font-weight: 900;
+                transition: color 0.3s;
+            }
+            section.active {
+                h2 {
+                    color: #86e36f;
+                }
+            }
+        }
+
+        .section-3-wrapper {
+            .container {
+                max-width: 1400px;
+                margin: auto;
+            }
+            .content-wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 80px 0;
+                padding: 0 40px;
+                #upperWrap {
+                    overflow: hidden;
+                    height: 3.5rem;
+                    line-height: 3.5rem;
+                    width: 300px;
+                    font-weight: 700;
+                }
+                #lowerWrap {
+                    overflow: hidden;
+                    height: 3rem;
+                    line-height: 2rem;
+                    // width:300px;
+                    font-weight: 700;
+                }
+                #upper {
+                    font-size: 3rem;
+                    line-height: 3.25rem;
+                    color: #d9d9d9;
+                }
+                #lower {
+                    font-size: 2rem;
+                    line-height: 2rem;
+                    color: #d9d9d9;
+                }
+
+                #line {
+                    width: 300px;
+                    height: 3px;
+                    background: #d9d9d9;
+                }
+            }
+            .skew-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                grid-gap: 20px;
+                padding: 0 40px 100px 40px;
+                .skew {
+                    width: 240px;
+                    height: 300px;
+                    border-radius: 10px;
+                    background-color: #8c8a93;
+                }
+            }
+        }
+    }
+</style>
+
+<script is:inline>
+    ScrollTrigger.create({
+        start: "top -80",
+        end: 99999,
+        toggleClass: {
+            className: "main-tool-bar--scrolled",
+            targets: ".main-tool-bar",
+        },
+    });
+
+    //HAMBURGER MENU
+    const burgertl = gsap.timeline();
+    var burgerSVGtl = gsap.timeline({ paused: true, reversed: true });
+    var hbupper = document.getElementsByClassName("upper");
+    var hbmiddle = document.getElementsByClassName("middle");
+    var hblower = document.getElementsByClassName("lower");
+
+    burgerSVGtl
+        .to(hbupper, 0.3, { attr: { d: "M8,2 L2,8" }, x: 1, ease: Power2.easeInOut }, "start")
+        .to(hbmiddle, 0.3, { autoAlpha: 0 }, "start")
+        .to(hblower, 0.3, { attr: { d: "M8,8 L2,2" }, x: 1, ease: Power2.easeInOut }, "start");
+
+    burgertl.to(".menu-link", {
+        translateY: "100%",
+        duration: 0.3,
+    });
+
+    burgertl
+        .to(".menu-overlay", {
+            width: "0",
+            duration: 0.3,
+        })
+        .progress(1);
+    gsap.set(".menu-overlay", { opacity: 1 });
+
+
+    // ANCHORLINK SMOOTH SCROLL
+    let links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(function (a) {
+        a.addEventListener("click", function (e) {
+            e.preventDefault();
+            burgerSVGtl.reversed() ? burgerSVGtl.play() : burgerSVGtl.reverse();
+            var yOffset = -80;
+            var href = this.getAttribute("href");
+            var elem = document.querySelector(href);
+            var elemTop = elem.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+            window.scroll({
+                top: elemTop,
+                behavior: "smooth",
+            });
+            burgertl.reversed(!burgertl.reversed());
+        });
+    });
+
+    //SECTION 1 - NORMAL ANIMATION
+    let sectionOnetl = gsap.timeline({
+        defaluts: { ease: "power4.inOut", duration: 2 },
+    });
+    const sectionOneWrapper = document.querySelector(".section-1-wrapper");
+    const sectionOneh1 = document.querySelector(".section-1 h1");
+    const sectionOneh3 = document.querySelector(".section-1 p");
+
+    sectionOnetl
+        .to(
+            sectionOneh1,
+            {
+                "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+                opacity: 1,
+                y: 0,
+            },
+            "+=0.4"
+        )
+        .to(
+            sectionOneh3,
+            {
+                "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+                opacity: 1,
+                y: 0,
+            },
+            "-=0.3"
+        );
+    //SECTION 2 HORIZONTAL SCROLL
+    const h_panels = gsap.utils.toArray(".h-panel");
+    let maxWidth = 0;
+
+    const getMaxWidth = () => {
+        maxWidth = 0;
+        h_panels.forEach((h_panel) => {
+            maxWidth += h_panel.offsetWidth;
+        });
+    };
+    getMaxWidth();
+    ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
+
+    gsap.to(h_panels, {
+        x: () => `-${maxWidth - window.innerWidth}`,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".section-2-wrapper",
+            pin: true,
+            scrub: true,
+            end: () => `+=${maxWidth}`,
+            invalidateOnRefresh: true,
+        },
+    });
+
+    h_panels.forEach((sct, i) => {
+        gsap.set(sct.firstElementChild, { opacity: 0, y: 100 });
+        ScrollTrigger.create({
+            trigger: sct,
+            start: () => "top top-=" + (sct.offsetLeft - window.innerWidth / 2) * (maxWidth / (maxWidth - window.innerWidth)),
+            end: () => "+=" + sct.offsetWidth * (maxWidth / (maxWidth - window.innerWidth)),
+            toggleClass: { targets: sct, className: "active" },
+            onEnter: () => {
+                gsap.to(sct.firstElementChild, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.4,
+                    ease: "power1.inOut",
+                });
+            },
+            onLeaveBack: () => {
+                gsap.to(sct.firstElementChild, {
+                    opacity: 0,
+                    y: 100,
+                    duration: 0.4,
+                    ease: "power1.inOut",
+                });
+            },
+            // markers:true,
+        });
+    });
+
+    //SECTION 3 IMAGE SKEW && HEADING ANIMATION
+    var section3tl = gsap.timeline({
+        // repeat: -1,
+        scrollTrigger: {
+            trigger: "#line",
+            start: "center bottom-=100",
+            toggleActions: "play none none reverse",
+            // markers:true,
+        },
+    });
+    section3tl.from("#line", {
+        scaleX: 0,
+        ease: "power2.inOut",
+        transformOrigin: "right center",
+    });
+    section3tl.from("#upper", { duration: 0.25, y: 54, ease: "power2.inOut" }, "text");
+    section3tl.from("#lower", { duration: 0.25, y: -34, ease: "power2.inOut" }, "text");
+    // section3tl.to("#line, #upper, #lower", { duration: 1, opacity: 0, ease:"none" }, "+=2");
+
+    let proxy = { skew: 0 },
+        skewSetter = gsap.quickSetter(".skew", "skewY", "deg"), // fast
+        clamp = gsap.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees.
+
+    ScrollTrigger.create({
+        onUpdate: (self) => {
+            let skew = clamp(self.getVelocity() / -300);
+            if (Math.abs(skew) > Math.abs(proxy.skew)) {
+                proxy.skew = skew;
+                gsap.to(proxy, {
+                    skew: 0,
+                    duration: 0.8,
+                    ease: "power3",
+                    overwrite: true,
+                    onUpdate: () => skewSetter(proxy.skew),
+                });
+            }
+        },
+    });
+
+    let imagesSlide = gsap.utils.toArray(".skew");
+    imagesSlide.forEach((image) => {
+        gsap.from(image, {
+            autoAlpha: 0,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: image,
+                start: "top 90%",
+                end: "top",
+                scrub: true,
+                // markers: true
+            },
+        });
+    });
+
+    gsap.set(".skew", { transformOrigin: "right center", force3D: true });
+</script>
