@@ -1,46 +1,86 @@
-<li class="link-card">
-	<a href="#">
-		<h2>Documentation</h2>
-		<p>Learn how Astro works and explore the official API docs.</p>
-	</a>
-</li>
+<nav>
+    <ul class="nav-list">
+        <li class="nav-item">Home</li>
+        <li class="nav-item">AboutServicesServices</li>
+        <li class="nav-item active">ServicesServicesServices</li>
+        <li class="nav-item">Contact</li>
+    </ul>
+    <div class="slider"></div>
+</nav>
 <style lang="scss">
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
+    nav {
+        position: relative;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .nav-list {
+        z-index: 2;
+        position: relative;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .nav-item {
+        padding: 15px 20px;
+        color: white;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .slider {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: #f39c12;
+        transition: all 0.3s ease;
+    }
 </style>
+
+<script>
+    // script.js
+    document.addEventListener("DOMContentLoaded", function () {
+        const navItems = document.querySelectorAll(".nav-item");
+        const slider = document.querySelector(".slider") as HTMLDivElement;
+
+        function moveSliderToElement(element: HTMLElement) {
+            const itemRect = element.getBoundingClientRect();
+            const navRect = (element.parentElement as HTMLElement).getBoundingClientRect();
+
+            slider.style.width = `${itemRect.width}px`;
+            slider.style.left = `${itemRect.left - navRect.left}px`;
+        }
+
+        function setActiveElement(element: HTMLElement) {
+            navItems.forEach((item) => item.classList.remove("active"));
+            element.classList.add("active");
+        }
+        navItems.forEach((item) => {
+            item.addEventListener("mouseenter", function () {
+                moveSliderToElement(item as HTMLElement);
+            });
+
+            item.addEventListener("mouseleave", function () {
+                const activeElement = document.querySelector(".nav-item.active") as HTMLElement;
+                if (activeElement) {
+                    moveSliderToElement(activeElement);
+                }
+            });
+
+            item.addEventListener("click", function () {
+                setActiveElement(item as HTMLElement);
+                moveSliderToElement(item as HTMLElement);
+            });
+        });
+        // Move the slider to the initially active element
+        const initialActiveElement = document.querySelector(".nav-item.active") as HTMLElement;
+        if (initialActiveElement) {
+            moveSliderToElement(initialActiveElement);
+        }
+    });
+</script>
