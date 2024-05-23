@@ -1,4 +1,4 @@
-<li class="link-card">
+<!-- <li class="link-card">
 	<a href="#">
 		<h2>Documentation</h2>
 		<p>Learn how Astro works and explore the official API docs.</p>
@@ -42,5 +42,123 @@
 	}
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent-light));
+	}
+</style> -->
+
+<section class="scooter-item">
+	<div class="item-container">
+		<div class="item-top">
+			 <img src="https://fastly.picsum.photos/id/10/270/230.jpg?hmac=oLsYe2I3OAwtBq7ojiK5vJ5jiRiBl3k86wmvtfxaAZA" alt="">
+		</div>
+		<div class="item-logo">
+			<img class="show-pc" src={`${import.meta.env.BASE_URL}/img/n/icon/logo-full-n.jpg`} />
+		</div>
+		<div class="item-summary">
+			<img class="summary-img" src="https://fastly.picsum.photos/id/291/240/60.jpg?hmac=X3IIXIfEKFZwbv9KDdrebfyN0yqGpOWy-kmoD-ZzS0E" alt="">
+			<div class="summary-desc"> non ad nulla tempor laboris ullamco est amet</div>
+		</div>
+		<div class="item-more">
+			<div class="item-btn">
+				<a class="n-more" href="javascript:void(0);">Learn More <img src={`${import.meta.env.BASE_URL}/img/n/icon/arrow-red.svg`} alt="" /></a>
+			</div>
+			<div class="item-buy">
+				<a class="buy-btn" href="javascript:void(0);" >Buy</a>
+			</div>
+		</div>
+		<div class="item-nums">
+			<div class="num-text">
+				<h3 class="num-title">24.8<span>G</span></h3>
+				<p class="num-desc">non ad nulla tempor</p>
+			</div>
+			<div class="num-text">
+				<h3 class="num-title">1.02<span>G</span></h3>
+				<p class="num-desc">est amet</p>
+			</div>
+			<div class="num-text">
+				<h3 class="num-title">96<span>G</span></h3>
+				<p class="num-desc">laboris ullamco</p>
+			</div>
+			<div class="num-text">
+				<h3 class="num-title">15.5<span>G</span></h3>
+				<p class="num-desc">nulla tempor laboris</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style lang="scss">
+ 	.scooter-item{
+		font-size: 16px;
+		width:100%;
+		display: flex;
+		justify-content: center;
+		.item-container{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 270px;
+			.item-top{
+				margin-bottom: 40px;
+			}
+			.item-logo{
+				width: 100px;
+				margin-bottom: 10px;
+			}
+			.item-summary{
+				text-align: center;
+				color: #666;
+				.summary-img{
+					padding: 0 15px;
+				}
+			}
+			.item-more{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
+				padding:40px 30px;
+				border-bottom: 1px solid #999;
+				.item-btn{
+					.n-more {
+						color: #c51601;
+						img {
+							display: inline-block;
+							width: 15px;
+							vertical-align: middle;
+							margin-left: 5px;
+						}
+					}
+				}
+				.item-buy{
+					.buy-btn {
+						margin-left: 20px;
+						background-color: #fff;
+						border-radius:20px;
+						border: 1px solid #999;
+						padding: 5px 15px;
+						line-height: 33px;
+					}
+				}
+			}
+			.item-nums{
+				margin-top: 30px;
+				.num-text{
+					text-align: center;
+					margin: 30px 0;
+					.num-title{
+						font-size: 24px;
+						span{
+							color: #666;
+							font-size: 16px;
+							font-weight: 400;
+						}
+					}
+					.num-desc{
+						font-size: 16px;
+						color: #666;
+					}
+				}
+			}
+		}
 	}
 </style>
