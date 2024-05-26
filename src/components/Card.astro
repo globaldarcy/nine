@@ -371,7 +371,6 @@ import Item from "../components/item.astro";
     import Swiper from "swiper";
     document.addEventListener("DOMContentLoaded", function () {
         const navItems = document.querySelectorAll(".product .nav-item");
-        const navItemsBlack = document.querySelectorAll(".product.black .nav-item");
         const slider = document.querySelector(".product .slider") as HTMLDivElement;
 
         function moveSliderToElement(element: HTMLElement) {
@@ -399,14 +398,18 @@ import Item from "../components/item.astro";
                 }
                 document.querySelector(".nav-list").classList.remove("hovered");
             });
-        });
-        navItemsBlack.forEach((item, index) => {
+
             item.addEventListener("click", function () {
                 setActiveElement(item as HTMLElement);
                 moveSliderToElement(item as HTMLElement);
-                kid_Swiper1.slideTo(index, 1000, false);
+                if (document.querySelector(".product").classList.contains("black")) {
+                    kid_Swiper1.slideTo(index, 1000, false);
+                } else {
+                    kid_Swiper2.slideTo(index, 1000, false);
+                }
             });
         });
+
         // Move the slider to the initially active element
         const initialActiveElement = document.querySelector(".nav-item.active") as HTMLElement;
         if (initialActiveElement) {
@@ -459,10 +462,6 @@ import Item from "../components/item.astro";
             noSwiping: true,
             watchSlidesProgress: true,
             swipeHandler: ".kidSwiper",
-            // pagination: {
-            //     el: ".swiper-pagination",
-            //     clickable: true,
-            // },
             on: {
                 slideChange: function (swiper) {
                     if (this.activeIndex == 1) {
@@ -473,14 +472,6 @@ import Item from "../components/item.astro";
                             setActiveElement(firstElement as HTMLElement);
                             moveSliderToElement(firstElement as HTMLElement);
                         }
-                        const navItemsWhite = document.querySelectorAll(".product.white .nav-item");
-                        navItemsWhite.forEach((item, index) => {
-                            item.addEventListener("click", function () {
-                                setActiveElement(item as HTMLElement);
-                                moveSliderToElement(item as HTMLElement);
-                                kid_Swiper2.slideTo(index, 1000, false);
-                            });
-                        });
                     } else {
                         document.querySelector(".product").classList.remove("white");
                         document.querySelector(".product").classList.add("black");
