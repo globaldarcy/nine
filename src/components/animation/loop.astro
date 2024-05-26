@@ -11,58 +11,58 @@
         <section class="loop-section demo-gallery">
             <ul class="wrapper">
                 <li>
-                    <img class="loop-img" height="874" src="https://picsum.photos/1200/800?random=6126" width="1200" />
+                    <img class="loop-img" height="874" src="https://picsum.photos/600/400?random=6126" width="1200" />
                 </li>
                 <li>
-                    <img class="loop-img" height="874" src="https://picsum.photos/1200/800?random=623" width="1200" />
+                    <img class="loop-img" height="874" src="https://picsum.photos/600/400?random=623" width="1200" />
                 </li>
                 <li>
-                    <img class="loop-img" height="874" src="https://picsum.photos/1200/800?random=6111" width="1200" />
-                </li>
-            </ul>
-        </section>
-        <section class="loop-section demo-gallery">
-            <ul class="wrapper">
-                <li>
-                    <img class="loop-img" height="874" src="https://picsum.photos/1200/800?random=65" width="1200" />
-                </li>
-                <li>
-                    <img class="loop-img" height="874" src="https://picsum.photos/1200/800?random=655" width="1200" />
-                </li>
-                <li>
-                    <img class="loop-img" height="874" src="https://picsum.photos/1200/800?random=6132" width="1200" />
-                </li>
-                <li>
-                    <img class="loop-img" height="874" src="https://picsum.photos/1200/800?random=6199" width="1200" />
+                    <img class="loop-img" height="874" src="https://picsum.photos/600/400?random=6111" width="1200" />
                 </li>
             </ul>
         </section>
         <section class="loop-section demo-gallery">
             <ul class="wrapper">
                 <li>
-                    <img class="loop-img" height="874" src="https://picsum.photos/1200/800?random=632" width="1200" />
+                    <img class="loop-img" height="874" src="https://picsum.photos/600/400?random=65" width="1200" />
                 </li>
                 <li>
-                    <img class="loop-img" height="874" src="https://picsum.photos/1200/800?random=686" width="1200" />
+                    <img class="loop-img" height="874" src="https://picsum.photos/600/400?random=655" width="1200" />
                 </li>
                 <li>
-                    <img class="loop-img" height="874" src="https://picsum.photos/1200/800?random=622" width="1200" />
+                    <img class="loop-img" height="874" src="https://picsum.photos/600/400?random=6132" width="1200" />
                 </li>
                 <li>
-                    <img class="loop-img" height="874" src="https://picsum.photos/1200/800?random=6177" width="1200" />
+                    <img class="loop-img" height="874" src="https://picsum.photos/600/400?random=6199" width="1200" />
                 </li>
             </ul>
         </section>
         <section class="loop-section demo-gallery">
             <ul class="wrapper">
                 <li>
-                    <img class="loop-img" height="874" src="https://picsum.photos/1200/800?random=6196" width="1200" />
+                    <img class="loop-img" height="874" src="https://picsum.photos/600/400?random=632" width="1200" />
                 </li>
                 <li>
-                    <img class="loop-img" height="874" src="https://picsum.photos/1200/800?random=661" width="1200" />
+                    <img class="loop-img" height="874" src="https://picsum.photos/600/400?random=686" width="1200" />
                 </li>
                 <li>
-                    <img class="loop-img" height="874" src="https://picsum.photos/1200/800?random=6127" width="1200" />
+                    <img class="loop-img" height="874" src="https://picsum.photos/600/400?random=622" width="1200" />
+                </li>
+                <li>
+                    <img class="loop-img" height="874" src="https://picsum.photos/600/400?random=6177" width="1200" />
+                </li>
+            </ul>
+        </section>
+        <section class="loop-section demo-gallery">
+            <ul class="wrapper">
+                <li>
+                    <img class="loop-img" height="874" src="https://picsum.photos/600/400?random=6196" width="1200" />
+                </li>
+                <li>
+                    <img class="loop-img" height="874" src="https://picsum.photos/600/400?random=661" width="1200" />
+                </li>
+                <li>
+                    <img class="loop-img" height="874" src="https://picsum.photos/600/400?random=6127" width="1200" />
                 </li>
             </ul>
         </section>
@@ -186,8 +186,8 @@
 
     const showDemo = () => {
         document.body.style.overflow = "auto";
-        document.scrollingElement.scrollTo(0, 0);
-        gsap.to(document.querySelector(".loader"), { autoAlpha: 0 });
+        // document.scrollingElement.scrollTo(0, 0);
+        // gsap.to(document.querySelector(".loader"), { autoAlpha: 0 });
 
         gsap.utils.toArray(".loop-section").forEach((section, index) => {
             const w = section.querySelector(".wrapper");
