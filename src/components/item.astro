@@ -5,13 +5,13 @@ const { num } = Astro.props;
 <div class="scooter-item">
     <div class="item-container">
         <div class="item-top">
-            <img src={`https://picsum.photos/150/120?random=${num}`} alt="" />
+            <img src={`https://picsum.photos/150/100?random=${num}`} alt="" />
         </div>
         <div class="item-logo">
             <img class="show-pc" src={`${import.meta.env.BASE_URL}/img/n/icon/logo-full-n-red.png`} />
         </div>
         <div class="item-summary">
-            <img class="summary-img" src={`https://picsum.photos/80/30?random=1${num}`} alt="" />
+            <img class="summary-img" src={`https://picsum.photos/80/20?random=1${num}`} alt="" />
             <div class="summary-desc">{num} non ad nulla tempor laboris ullamco est amet</div>
         </div>
         <div class="item-more">
@@ -52,6 +52,7 @@ const { num } = Astro.props;
         display: flex;
         justify-content: center;
         padding: 0 vw(50);
+        color: white;
         .item-container {
             display: flex;
             flex-direction: column;
@@ -67,7 +68,6 @@ const { num } = Astro.props;
             }
             .item-summary {
                 text-align: center;
-                color: #666;
                 .summary-img {
                     padding: 0 15px;
                 }
@@ -98,6 +98,7 @@ const { num } = Astro.props;
                         border: 1px solid #999;
                         padding: 5px 15px;
                         line-height: 33px;
+                        color: #000;
                     }
                 }
             }
@@ -109,14 +110,12 @@ const { num } = Astro.props;
                     .num-title {
                         font-size: 24px;
                         span {
-                            color: #666;
                             font-size: 16px;
                             font-weight: 400;
                         }
                     }
                     .num-desc {
                         font-size: 16px;
-                        color: #666;
                     }
                 }
             }

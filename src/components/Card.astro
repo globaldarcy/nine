@@ -5,6 +5,7 @@ import Item from "../components/item.astro";
 <div class="product black">
     <div class="product-nav">
         <h2 class="product-title">Find Your Product</h2>
+        <h2 class="product-title-black">Find Your Product</h2>
         <div class="product-navbar">
             <div class="type">
                 Super Scooter
@@ -27,42 +28,42 @@ import Item from "../components/item.astro";
             <div class="swiper-slide parent-slide1">
                 <div class="parent-slide-item">
                     <div class="banner swiper-no-swiping">
-                        <!-- <img src="https://picsum.photos/800/200?random=1" alt="" /> -->
+                        <img src="https://picsum.photos/800/100?random=1" alt="" />
                     </div>
                     <div class="swiper kidSwiper kidSwiper1">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="items">
                                     <Item num="1" />
+                                    <Item num="1" />
+                                    <Item num="1" />
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="items">
                                     <Item num="2" />
+                                    <Item num="2" />
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="items">
+                                    <Item num="3" />
+                                    <Item num="3" />
                                     <Item num="3" />
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="items">
-                                    <Item num="21" />
-                                    <Item num="22" />
+                                    <Item num="4" />
+                                    <Item num="4" />
+                                    <Item num="4" />
+                                    <Item num="4" />
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="items">
-                                    <Item num="31" />
-                                    <Item num="32" />
-                                    <Item num="33" />
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="items">
-                                    <Item num="41" />
-                                    <Item num="42" />
-                                    <Item num="43" />
-                                    <Item num="44" />
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="items">
-                                    <Item num="51" />
-                                    <Item num="52" />
+                                    <Item num="5" />
+                                    <Item num="5" />
                                 </div>
                             </div>
                         </div>
@@ -72,42 +73,42 @@ import Item from "../components/item.astro";
             <div class="swiper-slide parent-slide2">
                 <div class="parent-slide-item">
                     <div class="banner swiper-no-swiping">
-                        <img src="https://picsum.photos/800/200?random=2" alt="" />
+                        <img src="https://picsum.photos/800/100?random=2" alt="" />
                     </div>
                     <div class="swiper kidSwiper kidSwiper2">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="items">
-                                    <Item num="11" />
-                                    <Item num="12" />
-                                    <Item num="13" />
+                                    <Item num="1" />
+                                    <Item num="1" />
+                                    <Item num="1" />
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="items">
-                                    <Item num="121" />
-                                    <Item num="122" />
+                                    <Item num="2" />
+                                    <Item num="2" />
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="items">
-                                    <Item num="131" />
-                                    <Item num="132" />
-                                    <Item num="133" />
+                                    <Item num="3" />
+                                    <Item num="3" />
+                                    <Item num="3" />
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="items">
-                                    <Item num="141" />
-                                    <Item num="142" />
-                                    <Item num="143" />
-                                    <Item num="144" />
+                                    <Item num="4" />
+                                    <Item num="4" />
+                                    <Item num="4" />
+                                    <Item num="4" />
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="items">
-                                    <Item num="151" />
-                                    <Item num="152" />
+                                    <Item num="5" />
+                                    <Item num="5" />
                                 </div>
                             </div>
                         </div>
@@ -118,7 +119,7 @@ import Item from "../components/item.astro";
         <div class="swiper-pagination"></div>
     </div>
 </div>
-<style lang="scss">
+<style lang="scss" is:global>
     @import "../styles/_common.scss";
     .product {
         position: relative;
@@ -141,13 +142,13 @@ import Item from "../components/item.astro";
             display: flex;
         }
         .parent-slide1 {
-            padding: 0 vw(200);
+            padding: 0 vw(200) vw(80);
             padding-top: vw(300);
             position: static;
             background-color: var(--black, #000);
         }
         .parent-slide2 {
-            padding: 0 vw(200);
+            padding: 0 vw(200) vw(80);
             padding-top: vw(300);
             position: static;
             background-color: var(--white, #fff);
@@ -161,6 +162,9 @@ import Item from "../components/item.astro";
             width: 100%;
             pointer-events: none;
         }
+        .swiper-wrapper {
+            transition-timing-function: linear;
+        }
     }
     .product-nav {
         z-index: 2;
@@ -170,15 +174,25 @@ import Item from "../components/item.astro";
         width: 100%;
         padding: 0 vw(250);
     }
+    .product-title-black {
+        z-index: 5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: vw(100) vw(250) vw(50);
+        font-size: vw(50);
+        color: #000;
+        clip-path: inset(0 0 0 100%);
+        // transition: clip-path 2s linear;
+        // background: url(https://picsum.photos/800/100?random=2) no-repeat center / cover;
+    }
     .product-title {
         z-index: 3;
         position: relative;
         padding: vw(100) 0 vw(50);
         font-size: vw(50);
-        color: transparent;
-        transition: color 0.3s ease;
-        background-color: #fff;
-        background-clip: text;
+        color: #fff;
     }
     .product-navbar {
         display: flex;
@@ -254,7 +268,7 @@ import Item from "../components/item.astro";
     .white {
         .product-title {
             // color: #000;
-            background-color: #000;
+            // background-color: #000;
         }
         .product-navbar {
             .type {
@@ -275,8 +289,8 @@ import Item from "../components/item.astro";
         border-top: 1px solid #ccc;
         border-bottom: 2px solid #ccc;
         transition:
-            border 0.3s ease,
-            border-radius 0.3s ease;
+            border 1s ease,
+            border-radius 1s ease;
     }
 
     .white {
@@ -308,8 +322,19 @@ import Item from "../components/item.astro";
     .white {
         .nav-item {
             color: black;
+            &:hover,
             &.active {
                 color: white;
+            }
+        }
+        .hovered {
+            .nav-item {
+                &.active {
+                    color: black;
+                }
+                &:hover {
+                    color: white;
+                }
             }
         }
     }
@@ -336,6 +361,9 @@ import Item from "../components/item.astro";
             background-color: #000;
             border-radius: 27px;
         }
+        .scooter-item {
+            color: #000;
+        }
     }
 </style>
 
@@ -344,7 +372,6 @@ import Item from "../components/item.astro";
     document.addEventListener("DOMContentLoaded", function () {
         const navItems = document.querySelectorAll(".product .nav-item");
         const navItemsBlack = document.querySelectorAll(".product.black .nav-item");
-        const navItemsWhite = document.querySelectorAll(".product.white .nav-item");
         const slider = document.querySelector(".product .slider") as HTMLDivElement;
 
         function moveSliderToElement(element: HTMLElement) {
@@ -362,6 +389,7 @@ import Item from "../components/item.astro";
         navItems.forEach((item, index) => {
             item.addEventListener("mouseenter", function () {
                 moveSliderToElement(item as HTMLElement);
+                document.querySelector(".nav-list").classList.add("hovered");
             });
 
             item.addEventListener("mouseleave", function () {
@@ -369,6 +397,7 @@ import Item from "../components/item.astro";
                 if (activeElement) {
                     moveSliderToElement(activeElement);
                 }
+                document.querySelector(".nav-list").classList.remove("hovered");
             });
         });
         navItemsBlack.forEach((item, index) => {
@@ -378,31 +407,64 @@ import Item from "../components/item.astro";
                 kid_Swiper1.slideTo(index, 1000, false);
             });
         });
-        navItemsWhite.forEach((item, index) => {
-            item.addEventListener("click", function () {
-                setActiveElement(item as HTMLElement);
-                moveSliderToElement(item as HTMLElement);
-                kid_Swiper2.slideTo(index, 1000, false);
-            });
-        });
         // Move the slider to the initially active element
         const initialActiveElement = document.querySelector(".nav-item.active") as HTMLElement;
         if (initialActiveElement) {
             moveSliderToElement(initialActiveElement);
         }
 
+        let kid_Swiper1 = new Swiper(".kidSwiper1", {
+            slidesPerView: "auto",
+            nested: true,
+            resistanceRatio: 0,
+            freeMode: {
+                enabled: true,
+                momentumBounce: false,
+            },
+            // allowTouchMove: false,
+            on: {
+                slideChange: function () {
+                    const activeElement = document.querySelectorAll(".product.black .nav-item")[this.activeIndex] as HTMLElement;
+                    if (activeElement) {
+                        setActiveElement(activeElement as HTMLElement);
+                        moveSliderToElement(activeElement as HTMLElement);
+                    }
+                },
+            },
+        });
+        let kid_Swiper2 = new Swiper(".kidSwiper2", {
+            slidesPerView: "auto",
+            nested: true,
+            resistanceRatio: 0,
+            freeMode: {
+                enabled: true,
+                momentumBounce: false,
+            },
+            // allowTouchMove: false,
+            on: {
+                slideChange: function () {
+                    const activeElement = document.querySelectorAll(".product.white .nav-item")[this.activeIndex] as HTMLElement;
+                    if (activeElement) {
+                        setActiveElement(activeElement as HTMLElement);
+                        moveSliderToElement(activeElement as HTMLElement);
+                    }
+                },
+            },
+        });
+        let isProgressing = false;
         var parent_Swiper = new Swiper(".parentSwiper", {
-            speed: 2000,
+            speed: 1000,
             slidesPerView: 1,
             resistanceRatio: 0,
             noSwiping: true,
+            watchSlidesProgress: true,
             swipeHandler: ".kidSwiper",
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
+            // pagination: {
+            //     el: ".swiper-pagination",
+            //     clickable: true,
+            // },
             on: {
-                slideChange: function () {
+                slideChange: function (swiper) {
                     if (this.activeIndex == 1) {
                         document.querySelector(".product").classList.remove("black");
                         document.querySelector(".product").classList.add("white");
@@ -411,6 +473,14 @@ import Item from "../components/item.astro";
                             setActiveElement(firstElement as HTMLElement);
                             moveSliderToElement(firstElement as HTMLElement);
                         }
+                        const navItemsWhite = document.querySelectorAll(".product.white .nav-item");
+                        navItemsWhite.forEach((item, index) => {
+                            item.addEventListener("click", function () {
+                                setActiveElement(item as HTMLElement);
+                                moveSliderToElement(item as HTMLElement);
+                                kid_Swiper2.slideTo(index, 1000, false);
+                            });
+                        });
                     } else {
                         document.querySelector(".product").classList.remove("white");
                         document.querySelector(".product").classList.add("black");
@@ -422,41 +492,20 @@ import Item from "../components/item.astro";
                         }
                     }
                 },
-            },
-        });
-        var kid_Swiper1 = new Swiper(".kidSwiper1", {
-            slidesPerView: "auto",
-            nested: true,
-            resistanceRatio: 0,
-            freeMode: {
-                enabled: true,
-                momentumBounce: false,
-            },
-            on: {
-                slideChange: function () {
-                    const activeElement = document.querySelectorAll(".product.black .nav-item")[this.activeIndex] as HTMLElement;
-                    if (activeElement) {
-                        setActiveElement(activeElement as HTMLElement);
-                        moveSliderToElement(activeElement as HTMLElement);
+                progress: function (swiper, progress) {
+                    const blackTitle = document.querySelector(".product-title-black") as HTMLElement;
+                    let isInt = Number.isInteger(progress);
+                    // console.log(isInt);
+                    if (isInt) {
+                        kid_Swiper1.allowTouchMove = true;
+                        kid_Swiper2.allowTouchMove = true;
+                        blackTitle.style.transition = "clip-path 1s linear";
+                    } else {
+                        kid_Swiper1.allowTouchMove = false;
+                        kid_Swiper2.allowTouchMove = false;
+                        blackTitle.style.transition = "none";
                     }
-                },
-            },
-        });
-        var kid_Swiper2 = new Swiper(".kidSwiper2", {
-            slidesPerView: "auto",
-            nested: true,
-            resistanceRatio: 0,
-            freeMode: {
-                enabled: true,
-                momentumBounce: false,
-            },
-            on: {
-                slideChange: function () {
-                    const activeElement = document.querySelectorAll(".product.white .nav-item")[this.activeIndex] as HTMLElement;
-                    if (activeElement) {
-                        setActiveElement(activeElement as HTMLElement);
-                        moveSliderToElement(activeElement as HTMLElement);
-                    }
+                    blackTitle.style.clipPath = `inset(0 0 0 ${100 - progress * 100}%)`;
                 },
             },
         });
